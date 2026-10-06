@@ -1,0 +1,1548 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>El conocimiento escrito a mano · Educación, escritura y conocimiento en la Edad Media</title>
+<meta name="description" content="Presentación interactiva: cómo se conservaba y transmitía el conocimiento en la Europa medieval (siglos V–XV) y sus conexiones con Bizancio y el mundo islámico.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#15120e; --ink-2:#1f1b16; --ivory:#f6f0e3; --parch:#efe3c8; --parch-2:#e4d3ad;
+  --gold:#c9a24e; --gold-deep:#8a6420; --burgundy:#7b1e2b; --burgundy-soft:#e3929f;
+  --serif:"Cormorant Garamond","Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --nav-h:58px; --radius:18px; --focus:#f2c14e;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:var(--sans);font-size:17px;line-height:1.6;background:var(--ink);color:var(--ivory);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,svg{max-width:100%;display:block}
+button{font:inherit;color:inherit;cursor:pointer}
+a{color:inherit}
+:focus{outline:none}
+:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:6px}
+h1[tabindex="-1"]:focus,h2[tabindex="-1"]:focus{outline:none}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.skip{position:fixed;left:16px;top:-60px;z-index:200;background:var(--ivory);color:var(--ink);padding:10px 16px;border-radius:10px;font-weight:600;text-decoration:none}
+.skip:focus{top:12px}
+
+/* ---------- Temas ---------- */
+.t-light{--bg:#f5efe2;--surface:#fbf8f0;--surface-2:#efe6d2;--fg:#1b1712;--muted:#564d41;--line:rgba(27,23,18,.14);--accent:#7b1e2b;--gold-t:#83601d;--chip:#ece2cc;
+  background-color:var(--bg);color:var(--fg);
+  background-image:radial-gradient(1200px 600px at 85% -10%,rgba(201,162,78,.16),transparent 60%),radial-gradient(900px 500px at -10% 110%,rgba(123,30,43,.06),transparent 60%),url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .45  0 0 0 0 .36  0 0 0 0 .2  0 0 0 .07 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+.t-dark{--bg:#14110d;--surface:#1f1a14;--surface-2:#2a241c;--fg:#f4ecdb;--muted:#c2b59d;--line:rgba(244,236,219,.15);--accent:#e8a0ac;--gold-t:#dcb767;--chip:#2b251d;
+  background-color:var(--bg);color:var(--fg);
+  background-image:radial-gradient(1000px 600px at 15% -10%,rgba(201,162,78,.12),transparent 60%),radial-gradient(800px 500px at 110% 100%,rgba(123,30,43,.22),transparent 60%)}
+
+/* ---------- Navegación ---------- */
+.topnav{position:fixed;inset:0 0 auto 0;height:var(--nav-h);z-index:100;display:flex;align-items:center;gap:16px;padding:0 clamp(16px,3vw,32px);
+  background:rgba(20,17,13,.78);-webkit-backdrop-filter:saturate(160%) blur(14px);backdrop-filter:saturate(160%) blur(14px);border-bottom:1px solid rgba(244,236,219,.08);color:var(--ivory)}
+.brand{font-family:var(--serif);font-size:1.25rem;font-weight:600;letter-spacing:.01em;white-space:nowrap;text-decoration:none;display:flex;align-items:center;gap:10px}
+.brand .seal{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 30%,#e9c873,#a77c2c);color:#2a1c06;font-size:1rem;font-weight:700}
+.navlist{display:flex;gap:2px;margin:0 0 0 auto;padding:0;list-style:none}
+.navlist a{display:block;padding:6px 9px;border-radius:999px;font-size:.78rem;color:#cfc3ab;text-decoration:none;white-space:nowrap;transition:background .2s,color .2s}
+.navlist a:hover{color:#fff;background:rgba(244,236,219,.08)}
+.navlist a[aria-current="true"]{color:#1b1407;background:var(--gold);font-weight:600}
+.navtools{display:flex;gap:8px;align-items:center;margin-left:8px}
+.navbtn{border:1px solid rgba(244,236,219,.22);background:transparent;color:var(--ivory);border-radius:999px;padding:7px 14px;font-size:.82rem;font-weight:500;min-height:38px;white-space:nowrap}
+.navbtn:hover{background:rgba(244,236,219,.1)}
+.navbtn[aria-pressed="true"]{background:var(--ivory);color:var(--ink)}
+#menuBtn{display:none}
+.progress{position:absolute;left:0;bottom:-1px;height:2px;width:100%;background:transparent}
+.progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold),#f0d48e);transition:width .15s linear}
+.menu-panel{position:fixed;top:var(--nav-h);right:12px;left:12px;z-index:99;background:#1c1813;border:1px solid rgba(244,236,219,.12);border-radius:16px;padding:10px;box-shadow:0 20px 50px rgba(0,0,0,.45);display:none;max-height:calc(100vh - var(--nav-h) - 24px);overflow:auto}
+.menu-panel.open{display:block}
+.menu-panel ol{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.menu-panel a{display:flex;gap:12px;padding:12px;border-radius:10px;text-decoration:none;color:#e9dfca}
+.menu-panel a span{color:var(--gold);font-variant-numeric:tabular-nums;width:1.6em}
+.menu-panel a[aria-current="true"]{background:rgba(201,162,78,.16)}
+@media (max-width:1180px){.navlist a{padding:6px 7px;font-size:.72rem}}
+@media (max-width:1060px){.navlist{display:none}#menuBtn{display:inline-flex}.navtools{margin-left:auto}}
+@media (max-width:520px){.brand .txt{display:none}.navbtn{padding:7px 11px}}
+
+/* ---------- Secciones ---------- */
+.slide{position:relative;min-height:100vh;padding:calc(var(--nav-h) + clamp(48px,8vw,104px)) clamp(16px,5vw,64px) clamp(64px,8vw,110px);display:flex;flex-direction:column;justify-content:center;scroll-margin-top:0}
+.wrap{width:100%;max-width:1200px;margin:0 auto}
+.kicker{display:flex;align-items:center;gap:12px;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-t);font-weight:600;margin:0 0 18px}
+.kicker::before{content:"";width:28px;height:1px;background:currentColor}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.02;letter-spacing:-.01em;margin:0}
+h2{font-size:clamp(2.5rem,6.2vw,5.2rem)}
+h3{font-size:clamp(1.5rem,2.4vw,2rem);line-height:1.1}
+.lead{font-family:var(--serif);font-size:clamp(1.35rem,2.3vw,1.85rem);line-height:1.3;margin:18px 0 0;max-width:30ch;font-weight:500}
+.body{color:var(--muted);max-width:52ch;margin:20px 0 0}
+.body strong{color:var(--fg);font-weight:600}
+.split{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,5vw,72px);align-items:center}
+.split.rev{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
+.split.rev .text{order:2}
+@media (max-width:960px){.split,.split.rev{grid-template-columns:1fr}.split.rev .text{order:0}}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:11px 20px;min-height:44px;font-weight:600;font-size:.92rem;border:1px solid transparent;transition:transform .2s var(--ease),background .2s,color .2s,border-color .2s;text-decoration:none}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--accent);color:var(--bg)}
+.t-light .btn-primary{color:#fff}
+.btn-ghost{background:transparent;border-color:var(--line);color:var(--fg)}
+.btn-ghost:hover{border-color:var(--gold-t)}
+.btn-gold{background:linear-gradient(180deg,#e2bf6d,#b98d34);color:#22170a;box-shadow:0 10px 30px rgba(201,162,78,.25)}
+.btn .arr{transition:transform .2s var(--ease)}
+.btn:hover .arr{transform:translateX(3px)}
+sup.r{font-size:.62em;line-height:0;margin-left:1px;white-space:nowrap}
+sup.r a{color:var(--gold-t);text-decoration:none;font-weight:600;padding:0 1px;border-radius:3px}
+sup.r a:hover{text-decoration:underline}
+.figure{position:relative;margin:0}
+.fig-frame{position:relative;border-radius:var(--radius);overflow:hidden;background:var(--surface);border:1px solid var(--line);box-shadow:0 30px 60px -30px rgba(0,0,0,.35)}
+.t-dark .fig-frame{box-shadow:0 30px 80px -30px rgba(0,0,0,.8)}
+.figcap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:10px;font-size:.78rem;color:var(--muted)}
+.tag{display:inline-flex;align-items:center;gap:6px;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--gold-t);border:1px solid var(--line);border-radius:999px;padding:3px 10px;background:var(--surface)}
+.hint{font-size:.85rem;color:var(--muted);margin:14px 0 0}
+
+/* Puntos seleccionables */
+.hs{position:absolute;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;border:2px solid #fff6dd;background:rgba(123,30,43,.92);color:#fff6dd;font-weight:700;font-size:.95rem;display:grid;place-items:center;box-shadow:0 0 0 6px rgba(201,162,78,.28),0 8px 18px rgba(0,0,0,.35);transition:transform .2s var(--ease),background .2s,box-shadow .2s;padding:0}
+.hs:hover{transform:translate(-50%,-50%) scale(1.08)}
+.hs[aria-pressed="true"]{background:#c9a24e;color:#22170a;box-shadow:0 0 0 8px rgba(201,162,78,.45),0 8px 18px rgba(0,0,0,.35)}
+@media (max-width:600px){.hs{width:36px;height:36px;font-size:.85rem;box-shadow:0 0 0 4px rgba(201,162,78,.3)}}
+.panel{margin-top:18px;background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--gold-t);border-radius:14px;padding:18px 20px;min-height:120px}
+.panel h4{font-family:var(--serif);font-size:1.45rem;margin:0 0 6px;font-weight:600}
+.panel p{margin:0;color:var(--muted);font-size:.96rem}
+.panel p + p{margin-top:8px}
+.panel .src{margin-top:10px;font-size:.8rem;color:var(--gold-t)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--line);background:var(--chip);color:var(--fg);border-radius:999px;padding:8px 14px;min-height:40px;font-size:.88rem;font-weight:500;transition:background .2s,border-color .2s,color .2s}
+.chip:hover{border-color:var(--gold-t)}
+.chip[aria-pressed="true"],.chip[aria-selected="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+
+/* Notas del expositor */
+details.notes{margin-top:22px;border:1px dashed var(--line);border-radius:12px;padding:0 16px;max-width:60ch;background:color-mix(in srgb,var(--surface) 60%,transparent)}
+details.notes summary{cursor:pointer;padding:12px 0;font-size:.84rem;font-weight:600;color:var(--muted);list-style:none;display:flex;align-items:center;gap:8px;min-height:44px}
+details.notes summary::-webkit-details-marker{display:none}
+details.notes summary::before{content:"";width:8px;height:8px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(-45deg);transition:transform .2s}
+details.notes[open] summary::before{transform:rotate(45deg)}
+details.notes p{margin:0 0 14px;font-size:.92rem;color:var(--muted)}
+.deep{display:none}
+
+/* ---------- Portada ---------- */
+#s1{min-height:100vh;text-align:center;overflow:hidden;padding-top:calc(var(--nav-h) + clamp(28px,5vw,64px))}
+.authors{margin:26px 0 0;font-size:.95rem;letter-spacing:.06em;text-transform:uppercase;color:var(--fg);font-weight:500}
+.authors span{display:block;font-size:.72rem;letter-spacing:.2em;color:var(--gold-t);font-weight:600;margin-bottom:6px}
+@media print{.authors{color:#000}}
+#s1 .hero-grid{display:grid;justify-items:center;gap:8px}
+.eyebrow{font-size:.8rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-t);font-weight:600}
+#s1 h1{font-size:clamp(3rem,9vw,7.6rem);line-height:.95;margin-top:10px;background:linear-gradient(180deg,#fbf3df 30%,#d9bf86);-webkit-background-clip:text;background-clip:text;color:transparent}
+#s1 .sub{font-family:var(--serif);font-size:clamp(1.15rem,2.2vw,1.6rem);color:var(--muted);margin:14px 0 0;font-style:italic}
+#s1 .question{margin:26px auto 0;font-size:clamp(1rem,1.6vw,1.15rem);color:var(--fg);max-width:40ch}
+#s1 .question b{color:var(--gold-t);font-weight:600}
+.hero-book{width:min(780px,100%);margin:28px auto 0}
+@media (min-width:1000px){
+  #s1 .hero-grid{grid-template-columns:minmax(0,5fr) minmax(0,6fr);align-items:center;justify-items:stretch;text-align:left;gap:20px 48px}
+  #s1 .hero-text{text-align:left}
+  #s1 h1{font-size:clamp(3.2rem,5.6vw,5.8rem)}
+  #s1 .question{margin-left:0}
+  #s1 .hero-text .actions{justify-content:flex-start!important}
+  .hero-book{margin:0}
+  .hero-meta{grid-column:1/-1}
+}
+.hero-meta{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-top:22px;font-size:.82rem;color:var(--muted)}
+.reveal{opacity:0;transform:translateY(14px);animation:rise 1s var(--ease) forwards}
+.reveal.d1{animation-delay:.1s}.reveal.d2{animation-delay:.25s}.reveal.d3{animation-delay:.4s}.reveal.d4{animation-delay:.55s}
+@keyframes rise{to{opacity:1;transform:none}}
+.ink-draw path.draw{stroke-dasharray:1200;stroke-dashoffset:1200;animation:draw 2.4s .6s var(--ease) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+
+/* ---------- Códice (etapas) ---------- */
+.stepper{display:flex;gap:6px;margin:16px 0 0;flex-wrap:wrap}
+.step-dot{flex:1 1 0;min-width:44px;border:1px solid var(--line);background:var(--surface);border-radius:12px;padding:8px 6px;font-size:.74rem;line-height:1.2;text-align:center;color:var(--muted);min-height:48px}
+.step-dot b{display:block;font-family:var(--serif);font-size:1.2rem;color:var(--fg)}
+.step-dot[aria-current="step"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.step-dot[aria-current="step"] b{color:var(--bg)}
+.stage-g{opacity:0;transition:opacity .45s var(--ease)}
+.stage-g.on{opacity:1}
+.step-nav{display:flex;gap:8px;margin-top:12px;justify-content:space-between;align-items:center}
+.step-count{font-size:.85rem;color:var(--muted);font-variant-numeric:tabular-nums}
+
+/* ---------- Copista: diferencias ---------- */
+.diff{display:grid;gap:12px}
+.diff .card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.diff .lbl{font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:var(--gold-t);font-weight:600;margin-bottom:6px;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.diff .txt{font-family:var(--serif);font-size:clamp(1.25rem,2.2vw,1.6rem);line-height:1.45}
+.word{background:none;border:0;padding:2px 3px;margin:0 -1px;border-radius:6px;font-family:var(--serif);font-size:inherit;line-height:inherit;color:inherit;border-bottom:1px dotted var(--line)}
+.word:hover{background:var(--chip)}
+.word.ok{background:rgba(201,162,78,.3);text-decoration:line-through 2px var(--accent)}
+.word.no{animation:shake .35s}
+@keyframes shake{25%{transform:translateX(-3px)}75%{transform:translateX(3px)}}
+.fix{color:var(--accent);font-style:italic;font-size:.8em;vertical-align:super;margin-left:2px}
+.diff-feedback{min-height:56px}
+
+/* ---------- Cronología ---------- */
+.timeline{position:relative;display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:8px;margin-top:8px;padding-top:26px}
+.timeline::before{content:"";position:absolute;left:0;right:0;top:12px;height:1px;background:linear-gradient(90deg,transparent,var(--gold-t),transparent)}
+.tl-btn{position:relative;border:1px solid var(--line);background:var(--surface);border-radius:12px;padding:10px 6px 9px;text-align:center;min-height:64px}
+.tl-btn::before{content:"";position:absolute;top:-19px;left:50%;width:11px;height:11px;margin-left:-5.5px;border-radius:50%;background:var(--bg);border:2px solid var(--gold-t)}
+.tl-btn b{display:block;font-family:var(--serif);font-size:1.4rem;line-height:1}
+.tl-btn span{display:block;font-size:.7rem;color:var(--muted);margin-top:4px;line-height:1.2}
+.tl-btn[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.tl-btn[aria-pressed="true"] span{color:var(--bg);opacity:.8}
+.tl-btn[aria-pressed="true"]::before{background:var(--gold-t)}
+@media (max-width:760px){.timeline{grid-template-columns:repeat(4,minmax(0,1fr));row-gap:28px}.timeline::before{display:none}.tl-btn::before{top:-8px;width:9px;height:9px;margin-left:-4.5px}}
+.curric{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:stretch;margin-top:22px}
+.curric .box{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.curric .box h4{margin:0 0 6px;font-family:var(--serif);font-size:1.25rem}
+.curric .box p{margin:0;font-size:.86rem;color:var(--muted)}
+.curric .arrow{display:grid;place-items:center;color:var(--gold-t);font-size:1.4rem}
+@media (max-width:640px){.curric{grid-template-columns:1fr}.curric .arrow{transform:rotate(90deg)}}
+
+/* ---------- Perfiles ---------- */
+.profiles{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+@media (max-width:760px){.profiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.prof-btn{border:1px solid var(--line);background:var(--surface);border-radius:14px;padding:12px 10px;text-align:left;min-height:84px;display:flex;flex-direction:column;gap:6px}
+.prof-btn svg{width:30px;height:30px}
+.prof-btn b{font-size:.86rem;line-height:1.2}
+.prof-btn[aria-selected="true"]{border-color:var(--gold-t);box-shadow:inset 0 0 0 1px var(--gold-t);background:var(--surface-2)}
+.prof-card{margin-top:14px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px}
+.prof-card h4{font-family:var(--serif);font-size:1.6rem;margin:0}
+.prof-card .who{color:var(--gold-t);font-size:.82rem;margin:2px 0 12px}
+.prof-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:600px){.prof-grid{grid-template-columns:1fr}}
+.prof-grid div{border-top:1px solid var(--line);padding-top:10px}
+.prof-grid h5{margin:0 0 4px;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.prof-grid p{margin:0;font-size:.92rem}
+.prof-grid .plus h5{color:#6aa57a}.prof-grid .minus h5{color:var(--accent)}
+.t-dark .prof-grid .plus h5{color:#98d0a6}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:20px}
+.three div{border-top:2px solid var(--gold-t);padding-top:8px;font-size:.85rem;color:var(--muted)}
+.three b{display:block;color:var(--fg);font-size:.95rem}
+@media (max-width:520px){.three{grid-template-columns:1fr}}
+
+/* ---------- Escritorio ---------- */
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:4px;background:var(--surface);gap:4px}
+.seg button{border:0;background:transparent;border-radius:999px;padding:8px 16px;min-height:40px;font-weight:600;font-size:.88rem;color:var(--muted)}
+.seg button[aria-pressed="true"]{background:var(--fg);color:var(--bg)}
+.tool-g{transition:opacity .35s var(--ease)}
+.desk.mode-write .tool-g.illum,.desk.mode-illum .tool-g.write{opacity:.28}
+.hs.tool{background:rgba(31,26,20,.9)}
+.desk.mode-write .hs.illum,.desk.mode-illum .hs.write{display:none}
+
+/* ---------- Red de conocimiento ---------- */
+.net svg .edge{fill:none;stroke-width:2.5;opacity:.6;transition:opacity .3s,stroke-width .3s}
+.net svg .edge.t-trad{stroke:#e0b75c}.net svg .edge.t-copia{stroke:#e8a0ac}.net svg .edge.t-ens{stroke:#9cc7d8}
+.net svg .edge.hl{opacity:1;stroke-width:4}
+.net svg .edge.dim{opacity:.1}
+.net .node{position:absolute;transform:translate(-50%,-50%);border:1px solid rgba(244,236,219,.3);background:#221d17;color:var(--fg);border-radius:12px;padding:8px 12px;font-size:.82rem;font-weight:600;line-height:1.15;text-align:center;max-width:150px;min-height:44px;box-shadow:0 10px 24px rgba(0,0,0,.4)}
+.net .node small{display:block;font-weight:400;color:var(--muted);font-size:.7rem;margin-top:2px}
+.net .node[aria-pressed="true"]{background:var(--gold);color:#22170a;border-color:var(--gold)}
+.net .node[aria-pressed="true"] small{color:#3b2a0c}
+@media (max-width:640px){.net .node{font-size:.68rem;padding:6px 7px;max-width:96px;border-radius:9px}.net .node small{display:none}}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:.8rem;color:var(--muted);margin-top:10px}
+.legend i{display:inline-block;width:18px;height:3px;border-radius:2px;margin-right:6px;vertical-align:middle}
+.edges-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.edges-list .chip{font-size:.8rem}
+
+/* ---------- Síntesis y cuestionario ---------- */
+.synth{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,2vw,24px);margin-top:36px}
+@media (max-width:820px){.synth{grid-template-columns:1fr 1fr}}
+.synth div{border-top:1px solid var(--fg);padding-top:14px}
+.synth b{display:block;font-family:var(--serif);font-size:1.6rem;font-weight:600}
+.synth span{font-size:.9rem;color:var(--muted)}
+.quiz{margin-top:40px;background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:clamp(18px,3vw,36px)}
+.quiz-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.qbar{flex:1 1 160px;height:4px;background:var(--line);border-radius:4px;overflow:hidden;max-width:280px}
+.qbar span{display:block;height:100%;background:var(--accent);width:0;transition:width .3s}
+.qtext{font-family:var(--serif);font-size:clamp(1.4rem,2.6vw,2rem);line-height:1.2;margin:16px 0 18px}
+.opts{display:grid;gap:10px}
+.opt{text-align:left;border:1px solid var(--line);background:var(--bg);border-radius:14px;padding:13px 16px;min-height:52px;display:flex;gap:12px;align-items:center;font-size:.98rem}
+.opt:hover:not([disabled]){border-color:var(--fg)}
+.opt .k{flex:none;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--line);font-size:.8rem;font-weight:700}
+.opt.correct{border-color:#2f7a45;background:rgba(47,122,69,.1)}
+.opt.correct .k{background:#2f7a45;color:#fff;border-color:#2f7a45}
+.opt.wrong{border-color:var(--accent);background:rgba(123,30,43,.08)}
+.opt.wrong .k{background:var(--accent);color:#fff;border-color:var(--accent)}
+.opt[disabled]{cursor:default}
+.qfeed{margin-top:16px;padding:14px 16px;border-radius:12px;background:var(--surface-2);font-size:.95rem;display:none}
+.qfeed.show{display:block}
+.qfeed b{display:block;margin-bottom:2px}
+.qfoot{display:flex;justify-content:flex-end;margin-top:16px;gap:10px;flex-wrap:wrap}
+.score{text-align:center;padding:20px 0}
+.score .big{font-family:var(--serif);font-size:clamp(4rem,10vw,7rem);line-height:1;color:var(--accent)}
+
+/* ---------- Fuentes ---------- */
+.sources{counter-reset:none;list-style:none;padding:0;margin:30px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:2px 40px}
+@media (max-width:820px){.sources{grid-template-columns:1fr}}
+.sources li{display:grid;grid-template-columns:2.4em 1fr;gap:8px;padding:12px 0;border-top:1px solid var(--line);font-size:.9rem;color:var(--muted);scroll-margin-top:calc(var(--nav-h) + 20px);border-radius:6px;transition:background .6s}
+.sources li .n{font-family:var(--serif);font-size:1.25rem;color:var(--gold-t);line-height:1.1}
+.sources li b{color:var(--fg);font-weight:600}
+.sources li a{color:var(--gold-t);word-break:break-word}
+.sources li.flash{background:rgba(201,162,78,.18)}
+.credits{margin-top:36px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;font-size:.88rem;color:var(--muted)}
+@media (max-width:820px){.credits{grid-template-columns:1fr}}
+.credits h4{font-family:var(--serif);color:var(--fg);font-size:1.25rem;margin:0 0 6px}
+.credits p{margin:0}
+
+/* ---------- Modal ---------- */
+.modal-bg{position:fixed;inset:0;z-index:300;background:rgba(10,8,6,.6);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:16px}
+.modal-bg.open{display:flex}
+.modal{position:relative;width:min(760px,100%);max-height:min(86vh,900px);overflow:auto;background:#fbf7ee;color:#1b1712;border-radius:22px;padding:clamp(22px,4vw,44px);box-shadow:0 40px 100px rgba(0,0,0,.5);--fg:#1b1712;--muted:#564d41;--gold-t:#83601d;--line:rgba(27,23,18,.14);--accent:#7b1e2b;--surface:#f3ecdc}
+.modal .kicker{margin-bottom:10px}
+.modal h3{font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:12px;padding-right:44px}
+.modal p,.modal li{color:#3d362c;font-size:1rem}
+.modal ul{padding-left:1.2em}
+.modal .close{position:absolute;top:14px;right:14px;width:44px;height:44px;border-radius:50%;border:1px solid rgba(27,23,18,.15);background:#fff;font-size:1.4rem;line-height:1;display:grid;place-items:center}
+.modal .warn{border-left:3px solid var(--accent);background:#f3ecdc;padding:10px 14px;border-radius:8px}
+.modal-in{animation:pop .3s var(--ease)}
+@keyframes pop{from{opacity:0;transform:translateY(10px) scale(.98)}}
+
+/* ---------- Modo exposición ---------- */
+.present-bar{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:120;display:none;gap:6px;align-items:center;background:rgba(20,17,13,.88);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border:1px solid rgba(244,236,219,.16);border-radius:999px;padding:6px;color:var(--ivory);box-shadow:0 16px 40px rgba(0,0,0,.4)}
+.present-bar button{border:0;background:transparent;color:var(--ivory);border-radius:999px;min-width:44px;height:44px;padding:0 14px;font-weight:600;font-size:.9rem}
+.present-bar button:hover{background:rgba(244,236,219,.12)}
+.present-bar .count{font-variant-numeric:tabular-nums;font-size:.85rem;padding:0 8px;color:#d8ccb4;min-width:64px;text-align:center}
+body.presenting .present-bar{display:flex}
+body.presenting .slide{display:none}
+body.presenting .slide.is-current{display:flex;min-height:100vh;padding-bottom:110px;animation:fadeIn .35s var(--ease)}
+body.presenting{padding-bottom:0}
+@keyframes fadeIn{from{opacity:0}}
+
+/* ---------- Movimiento reducido ---------- */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;animation-delay:0s!important;transition-duration:.001ms!important}
+  .reveal{opacity:1;transform:none}
+  .ink-draw path.draw{stroke-dashoffset:0}
+}
+
+/* ---------- Impresión ---------- */
+@media print{
+  @page{margin:16mm}
+  body{background:#fff;color:#000;font-size:11pt}
+  .topnav,.menu-panel,.present-bar,.modal-bg,.skip,.actions,.step-nav,.seg,.no-print,.hs{display:none!important}
+  .slide,body.presenting .slide{display:block!important;min-height:0;padding:0 0 10mm;background:#fff!important;color:#000;break-before:page}
+  #s1{break-before:auto}
+  .t-light,.t-dark{--bg:#fff;--surface:#fff;--surface-2:#f4f4f4;--fg:#000;--muted:#222;--line:#bbb;--gold-t:#5a4210;--accent:#6b1824;--chip:#fff;background:#fff!important}
+  #s1 h1{color:#000;background:none;-webkit-text-fill-color:#000}
+  h2{font-size:26pt}.lead{font-size:14pt;max-width:none}.body{max-width:none}
+  .deep{display:block!important;margin-top:8mm;border-top:1px solid #bbb;padding-top:4mm}
+  .deep::before{content:"Profundizar";display:block;font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:8pt;margin-bottom:2mm}
+  details.notes{border:1px solid #bbb}
+  .fig-frame{box-shadow:none;break-inside:avoid}
+  .figure{max-width:140mm}
+  .split,.split.rev{grid-template-columns:1fr}
+  .stage-g{opacity:1}
+  .stage-g:not(.on){display:none}
+  .quiz{display:none}
+  .sources li a{word-break:break-all}
+  a{text-decoration:none}
+  .net .node{background:#fff;color:#000;box-shadow:none;border-color:#777}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#s2">Saltar al contenido</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="gGold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f6df98"/><stop offset=".45" stop-color="#c9a24e"/><stop offset=".7" stop-color="#8f6a24"/><stop offset="1" stop-color="#e8c56f"/>
+    </linearGradient>
+    <linearGradient id="gParch" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f8efdc"/><stop offset="1" stop-color="#e9d8b2"/>
+    </linearGradient>
+    <linearGradient id="gGutter" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5a3a12" stop-opacity="0"/><stop offset=".5" stop-color="#5a3a12" stop-opacity=".32"/><stop offset="1" stop-color="#5a3a12" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="gShadow" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#000" stop-opacity=".55"/><stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="gWood" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7d5836"/><stop offset="1" stop-color="#553820"/>
+    </linearGradient>
+    <linearGradient id="gSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f3e7cc"/><stop offset="1" stop-color="#fbf6ea"/>
+    </linearGradient>
+    <pattern id="pDiaper" width="16" height="16" patternUnits="userSpaceOnUse">
+      <rect width="16" height="16" fill="#27477a"/><circle cx="8" cy="8" r="1.6" fill="#e2c06a"/><path d="M0 8 L8 0 L16 8 L8 16Z" fill="none" stroke="#3a5d93" stroke-width=".8"/>
+    </pattern>
+    <g id="leaf"><path d="M0 0 C6 -6 14 -6 18 0 C14 6 6 6 0 0Z"/></g>
+  </defs>
+</svg>
+
+<header class="topnav" role="banner">
+  <a class="brand" href="#s1"><span class="seal" aria-hidden="true">S</span><span class="txt">Scriptorium</span></a>
+  <nav aria-label="Secciones">
+    <ol class="navlist" id="navlist"></ol>
+  </nav>
+  <div class="navtools">
+    <button class="navbtn" id="menuBtn" aria-expanded="false" aria-controls="menuPanel">Secciones</button>
+    <button class="navbtn" id="presentBtn" aria-pressed="false" title="Modo exposición: una sección por pantalla; usa las flechas del teclado">Modo exposición</button>
+  </div>
+  <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+</header>
+<div class="menu-panel" id="menuPanel" role="dialog" aria-label="Accesos directos a las secciones"><ol id="menuList"></ol></div>
+
+<main id="main">
+
+<!-- ===================== 1. PORTADA ===================== -->
+<section class="slide t-dark" id="s1" data-title="Portada" aria-label="Portada">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+    <p class="eyebrow reveal d1">Educación, escritura y conocimiento en la Edad Media</p>
+    <h1 class="reveal d2">El conocimiento<br>escrito a mano</h1>
+    <p class="sub reveal d2">Europa medieval, siglos V–XV, en diálogo con Bizancio y el mundo islámico</p>
+    <p class="question reveal d3">Pregunta central: <b>¿cómo se conservaba y transmitía el conocimiento?</b></p>
+    <div class="actions reveal d3" style="justify-content:center">
+      <button class="btn btn-gold" id="startBtn">Iniciar recorrido <span class="arr" aria-hidden="true">→</span></button>
+      <button class="btn btn-ghost" id="startPresent">Exponer en pantalla completa</button>
+    </div>
+    <p class="authors reveal d4"><span>Hecho por</span> Emilio&nbsp;O. · Miranda&nbsp;G. · Mateo&nbsp;V. · Juan&nbsp;R. · Miguel&nbsp;R.</p>
+    </div>
+    <figure class="figure hero-book reveal d4">
+      <svg class="ink-draw" viewBox="0 0 900 560" role="img" aria-labelledby="heroT">
+        <title id="heroT">Recreación didáctica de un códice abierto: a la izquierda, una inicial dorada y texto en columnas; a la derecha, una miniatura de una persona escribiendo en un atril.</title>
+        <ellipse cx="450" cy="512" rx="400" ry="34" fill="url(#gShadow)"/>
+        <path d="M40,92 Q240,52 450,100 L450,508 Q240,468 40,500Z" fill="#5a1620"/>
+        <path d="M860,92 Q660,52 450,100 L450,508 Q660,468 860,500Z" fill="#5a1620"/>
+        <path d="M56,86 Q245,50 450,94 L450,498 Q245,460 56,488Z" fill="#dccaa0"/>
+        <path d="M844,86 Q655,50 450,94 L450,498 Q655,460 844,488Z" fill="#dccaa0"/>
+        <path d="M62,78 Q245,44 450,88 L450,490 Q245,452 62,480Z" fill="url(#gParch)"/>
+        <path d="M838,78 Q655,44 450,88 L450,490 Q655,452 838,480Z" fill="url(#gParch)"/>
+        <rect x="395" y="70" width="110" height="425" fill="url(#gGutter)"/>
+        <!-- página izquierda -->
+        <rect x="112" y="128" width="120" height="5" rx="2.5" fill="#9b2a33"/>
+        <rect x="112" y="150" width="98" height="98" rx="4" fill="#7b1e2b" stroke="url(#gGold)" stroke-width="5"/>
+        <rect x="120" y="158" width="82" height="82" rx="2" fill="url(#pDiaper)" opacity=".35"/>
+        <text x="161" y="230" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="88" font-weight="700" fill="url(#gGold)">S</text>
+        <path class="draw" d="M116,258 C92,298 134,330 106,372 S124,428 102,466" fill="none" stroke="#b38a35" stroke-width="2.5"/>
+        <g fill="#5d7a3a"><use href="#leaf" transform="translate(110,300) rotate(-30)"/><use href="#leaf" transform="translate(116,350) rotate(200)"/><use href="#leaf" transform="translate(108,410) rotate(-20)"/></g>
+        <g fill="#c9a24e"><circle cx="100" cy="282" r="4"/><circle cx="124" cy="388" r="4"/><circle cx="96" cy="446" r="4"/></g>
+        <g fill="#3a2f24" opacity=".78">
+          <rect x="224" y="160" width="170" height="3.6" rx="1.8"/><rect x="224" y="178" width="164" height="3.6" rx="1.8"/><rect x="224" y="196" width="170" height="3.6" rx="1.8"/><rect x="224" y="214" width="158" height="3.6" rx="1.8"/><rect x="224" y="232" width="168" height="3.6" rx="1.8"/>
+          <rect x="132" y="262" width="262" height="3.6" rx="1.8"/><rect x="132" y="280" width="256" height="3.6" rx="1.8"/><rect x="132" y="298" width="262" height="3.6" rx="1.8"/><rect x="132" y="316" width="250" height="3.6" rx="1.8"/>
+          <rect x="132" y="352" width="262" height="3.6" rx="1.8"/><rect x="132" y="370" width="258" height="3.6" rx="1.8"/><rect x="132" y="388" width="262" height="3.6" rx="1.8"/><rect x="132" y="406" width="244" height="3.6" rx="1.8"/><rect x="132" y="424" width="262" height="3.6" rx="1.8"/><rect x="132" y="442" width="150" height="3.6" rx="1.8"/>
+        </g>
+        <rect x="132" y="334" width="140" height="3.6" rx="1.8" fill="#9b2a33"/>
+        <!-- página derecha -->
+        <rect x="500" y="122" width="276" height="186" rx="3" fill="url(#pDiaper)" stroke="url(#gGold)" stroke-width="6"/>
+        <path d="M518,300 L518,196 Q638,124 758,196 L758,300Z" fill="url(#gGold)" opacity=".92"/>
+        <path d="M528,300 L528,200 Q638,138 748,200 L748,300Z" fill="none" stroke="#7b1e2b" stroke-width="2"/>
+        <rect x="518" y="292" width="240" height="10" fill="#5a3a1c"/>
+        <path d="M664,294 L676,236 L732,226 L728,240 L688,248 L680,294Z" fill="#6b4a2a"/>
+        <path d="M676,236 L732,226 L730,217 L674,227Z" fill="#f6ecd4"/>
+        <path d="M566,294 C566,246 590,222 614,220 C644,220 660,252 664,294Z" fill="#7b1e2b"/>
+        <path d="M596,212 C596,186 632,184 632,210 L632,222 L596,222Z" fill="#4e121b"/>
+        <circle cx="614" cy="210" r="12" fill="#e9cfaa"/>
+        <path d="M628,248 Q652,242 672,236" stroke="#7b1e2b" stroke-width="10" stroke-linecap="round" fill="none"/>
+        <path d="M672,236 L694,202" stroke="#fbf6ea" stroke-width="2.4" stroke-linecap="round"/>
+        <g fill="#3a2f24" opacity=".78">
+          <rect x="506" y="332" width="270" height="3.6" rx="1.8"/><rect x="506" y="350" width="262" height="3.6" rx="1.8"/><rect x="506" y="368" width="270" height="3.6" rx="1.8"/><rect x="506" y="386" width="266" height="3.6" rx="1.8"/><rect x="506" y="404" width="270" height="3.6" rx="1.8"/><rect x="506" y="422" width="254" height="3.6" rx="1.8"/><rect x="506" y="440" width="190" height="3.6" rx="1.8"/>
+        </g>
+        <g fill="#c9a24e"><circle cx="796" cy="150" r="4"/><circle cx="800" cy="230" r="4"/><circle cx="794" cy="330" r="4"/></g>
+        <path class="draw" d="M792,130 C808,180 784,220 800,270 S786,360 800,420" fill="none" stroke="#b38a35" stroke-width="2.5"/>
+        <!-- pluma -->
+        <path d="M712,528 C770,478 826,426 874,372 C852,436 800,486 720,532Z" fill="#f4ebd8" stroke="#c9b88f" stroke-width="1.2"/>
+        <path d="M700,540 L874,372" stroke="#a8946a" stroke-width="1.6"/>
+      </svg>
+      <figcaption class="figcap"><span class="tag">Recreación didáctica</span><span>Ilustración original en SVG; no reproduce un manuscrito concreto.</span></figcaption>
+    </figure>
+    <div class="hero-meta reveal d4"><span>11 secciones · 10–12 min</span><span>·</span><span>Usa ← → en modo exposición</span></div>
+  </div>
+</section>
+
+<!-- ===================== 2. MONASTERIOS ===================== -->
+<section class="slide t-light" id="s2" data-title="Monasterios" aria-labelledby="h-s2">
+  <div class="wrap split">
+    <div class="text">
+      <p class="kicker">02 · Espacios del saber</p>
+      <h2 id="h-s2">Monasterios y bibliotecas</h2>
+      <p class="lead">El conocimiento se guardaba donde se podía leer, copiar y enseñar.</p>
+      <p class="body">Muchos monasterios reunieron bibliotecas con textos religiosos, historias, enciclopedias y obras de ciencia natural.<sup class="r" data-r="1"></sup> Allí se leía, se enseñaba y se copiaba. No fueron los únicos centros: <strong>escuelas catedralicias, cortes y ciudades</strong> también reunieron libros y estudiantes.<sup class="r" data-r="12,7"></sup></p>
+      <div class="actions">
+        <button class="btn btn-primary" data-deep="deep-s2">Profundizar <span class="arr" aria-hidden="true">→</span></button>
+      </div>
+      <details class="notes"><summary>Notas para el expositor</summary>
+        <p>Empieza situando al público: no hablamos de un solo lugar, sino de una red de espacios. Señala los cuatro puntos del dibujo uno por uno.</p>
+        <p>Insiste en un matiz: «scriptorium» describe la actividad de copiar; no todos los monasterios tenían una sala idéntica para ello. Termina con el punto 4 para mostrar que el saber también vivía en catedrales, cortes y ciudades.</p>
+      </details>
+    </div>
+    <div>
+      <figure class="figure">
+        <div class="fig-frame" id="mapMonastery" style="background:#fbf6ea">
+          <svg viewBox="0 0 900 520" role="img" aria-labelledby="monT">
+            <title id="monT">Recreación didáctica: corte de un edificio con biblioteca, espacio de copia y aula; a la derecha, una ciudad con catedral.</title>
+            <rect width="900" height="520" fill="url(#gSky)"/>
+            <rect y="462" width="900" height="58" fill="#d8c79f"/>
+            <!-- ciudad -->
+            <g fill="#cdb98f" stroke="#8a7a5c" stroke-width="1.5">
+              <rect x="790" y="330" width="40" height="132"/><path d="M790,330 L810,300 L830,330Z"/>
+              <rect x="836" y="250" width="34" height="212"/><path d="M836,250 L853,150 L870,250Z"/>
+              <rect x="772" y="390" width="22" height="72"/><rect x="872" y="370" width="22" height="92"/>
+            </g>
+            <circle cx="853" cy="200" r="7" fill="#f6efe0" stroke="#8a7a5c"/>
+            <!-- edificio -->
+            <polygon points="40,180 410,80 780,180" fill="#8c3a2c" stroke="#5e2419" stroke-width="2"/>
+            <rect x="60" y="180" width="700" height="282" fill="#e7d8b7" stroke="#8a7a5c" stroke-width="2"/>
+            <g fill="#fbf5e6" stroke="#a8977a" stroke-width="2">
+              <path d="M76,446 L76,262 Q176,200 277,262 L277,446Z"/>
+              <path d="M309,446 L309,262 Q410,200 511,262 L511,446Z"/>
+              <path d="M543,446 L543,262 Q644,200 744,262 L744,446Z"/>
+            </g>
+            <!-- biblioteca -->
+            <g stroke="#7a5a36" stroke-width="5"><line x1="92" y1="300" x2="262" y2="300"/><line x1="92" y1="352" x2="262" y2="352"/><line x1="92" y1="404" x2="262" y2="404"/></g>
+            <g>
+              <rect x="98" y="268" width="12" height="32" fill="#7b1e2b"/><rect x="112" y="272" width="10" height="28" fill="#27477a"/><rect x="124" y="266" width="14" height="34" fill="#a07a3a"/><rect x="140" y="274" width="10" height="26" fill="#3f6b3a"/><rect x="152" y="268" width="13" height="32" fill="#7b1e2b"/><rect x="190" y="270" width="12" height="30" fill="#27477a"/><rect x="204" y="266" width="15" height="34" fill="#6b4a2a"/><rect x="221" y="272" width="11" height="28" fill="#a07a3a"/>
+              <rect x="98" y="320" width="14" height="32" fill="#6b4a2a"/><rect x="114" y="324" width="12" height="28" fill="#7b1e2b"/><rect x="128" y="318" width="10" height="34" fill="#3f6b3a"/><rect x="160" y="322" width="14" height="30" fill="#27477a"/><rect x="176" y="318" width="12" height="34" fill="#a07a3a"/><rect x="214" y="324" width="13" height="28" fill="#7b1e2b"/><rect x="229" y="320" width="12" height="32" fill="#6b4a2a"/>
+              <rect x="100" y="372" width="12" height="32" fill="#27477a"/><rect x="114" y="376" width="14" height="28" fill="#a07a3a"/><rect x="148" y="370" width="12" height="34" fill="#7b1e2b"/><rect x="162" y="376" width="10" height="28" fill="#3f6b3a"/><rect x="196" y="372" width="15" height="32" fill="#6b4a2a"/><rect x="213" y="376" width="12" height="28" fill="#27477a"/>
+              <rect x="176" y="384" width="34" height="20" fill="#e9d8b0" stroke="#7a5a36" transform="rotate(-8 193 394)"/>
+            </g>
+            <!-- espacio de copia -->
+            <path d="M390,262 L390,226 Q410,206 430,226 L430,262Z" fill="#fff6d6" stroke="#a8977a" stroke-width="2"/>
+            <polygon points="392,262 428,262 470,446 350,446" fill="#f6dc8f" opacity=".28"/>
+            <g>
+              <path d="M330,446 L340,372 L392,362 L388,376 L352,384 L346,446Z" fill="#6b4a2a"/>
+              <path d="M340,372 L392,362 L391,356 L339,366Z" fill="#f6ecd4"/>
+              <path d="M398,446 C398,404 410,384 426,382 C446,382 456,410 458,446Z" fill="#4e121b"/>
+              <circle cx="426" cy="370" r="11" fill="#e9cfaa"/>
+              <path d="M412,404 Q396,388 382,372" stroke="#4e121b" stroke-width="8" stroke-linecap="round" fill="none"/>
+              <path d="M490,446 L482,384 L452,378 L456,390 L476,394 L480,446Z" fill="#6b4a2a" opacity=".85"/>
+            </g>
+            <!-- aula -->
+            <g>
+              <path d="M566,446 L566,330 L600,330 L600,446Z" fill="#6b4a2a"/>
+              <path d="M558,330 L608,318 L610,326 L560,338Z" fill="#f6ecd4"/>
+              <path d="M600,446 C600,380 612,350 628,346 C646,346 654,380 656,446Z" fill="#27477a"/>
+              <circle cx="628" cy="332" r="12" fill="#e9cfaa"/>
+              <rect x="664" y="420" width="72" height="10" fill="#6b4a2a"/>
+              <g fill="#7b1e2b"><path d="M672,420 C672,398 678,390 686,390 C694,390 700,398 700,420Z"/><path d="M704,420 C704,398 710,390 718,390 C726,390 732,398 732,420Z"/></g>
+              <g fill="#e9cfaa"><circle cx="686" cy="382" r="8"/><circle cx="718" cy="382" r="8"/></g>
+            </g>
+            <g font-family="Cormorant Garamond, Georgia, serif" font-size="22" fill="#5b4a2e" text-anchor="middle" font-weight="600">
+              <text x="176" y="496">Biblioteca</text><text x="410" y="496">Copia</text><text x="644" y="496">Enseñanza</text><text x="842" y="496">Ciudad</text>
+            </g>
+          </svg>
+          <button class="hs" style="left:19.5%;top:44%" data-spot="0" aria-pressed="false" aria-label="1. Biblioteca">1</button>
+          <button class="hs" style="left:45.5%;top:55%" data-spot="1" aria-pressed="false" aria-label="2. Espacio de copia (scriptorium)">2</button>
+          <button class="hs" style="left:71.5%;top:50%" data-spot="2" aria-pressed="false" aria-label="3. Enseñanza">3</button>
+          <button class="hs" style="left:94%;top:52%" data-spot="3" aria-pressed="false" aria-label="4. Más allá del claustro: escuelas, cortes y ciudades">4</button>
+        </div>
+        <figcaption class="figcap"><span class="tag">Recreación didáctica</span><span>Esquema simplificado, no un monasterio real.</span></figcaption>
+      </figure>
+      <div class="panel" id="panelMonastery" aria-live="polite"><h4>Selecciona un punto</h4><p>Toca los números del dibujo para recorrer biblioteca, espacio de copia, enseñanza y otros centros del saber.</p></div>
+    </div>
+  </div>
+  <div class="deep" id="deep-s2">
+    <p class="kicker">Profundizar · Monasterios y bibliotecas</p>
+    <h3>Una red de lugares, no un solo centro</h3>
+    <p>Las bibliotecas monásticas podían reunir escritos de los Padres de la Iglesia, comentarios de la Biblia, historias, enciclopedias, cosmologías y obras de ciencia natural, a menudo copiadas en los propios monasterios.<sup class="r" data-r="1"></sup> Casas como Saint Gall (Suiza), Prüfening (Alemania) y Thorney (Inglaterra) se preciaban de ser centros de saber.<sup class="r" data-r="1"></sup></p>
+    <p>Gran parte de la literatura latina antigua —Cicerón, Catulo, Virgilio— ha llegado hasta hoy porque fue copiada y conservada en bibliotecas monásticas, eclesiásticas y reales.<sup class="r" data-r="11"></sup> En Bizancio, los intelectuales también valoraron el saber clásico: el patriarca Focio (siglo IX) leyó cientos de obras antiguas.<sup class="r" data-r="11"></sup></p>
+    <p><b>Sobre el «scriptorium».</b> La palabra designa el lugar donde se escribía. Conviene pensarlo como una actividad organizada —copiar, corregir, decorar— más que como una sala idéntica en todos los monasterios.</p>
+    <p>Con el tiempo crecieron otros centros: la Universidad de París surgió en el siglo XII a partir de las escuelas catedralicias de la ciudad,<sup class="r" data-r="12"></sup> y desde el siglo XIII la producción de libros quedó en gran parte en manos de artesanos especializados coordinados por un <i>libraire</i>.<sup class="r" data-r="14"></sup></p>
+    <p class="warn">Las condiciones variaron mucho según el lugar, la época y la comunidad; ningún ejemplo sirve como regla para toda la Edad Media.</p>
+  </div>
+</section>
+
+<!-- ===================== 3. DEL SOPORTE AL LIBRO ===================== -->
+<section class="slide t-dark" id="s3" data-title="Del soporte al libro" aria-labelledby="h-s3">
+  <div class="wrap split rev">
+    <div class="text">
+      <p class="kicker">03 · Materiales</p>
+      <h2 id="h-s3">Del soporte al libro</h2>
+      <p class="lead">Un libro medieval era el resultado de muchas manos y muchas etapas.</p>
+      <p class="body"><strong>Manuscrito:</strong> texto escrito a mano. <strong>Pergamino:</strong> piel animal preparada para escribir. <strong>Códice:</strong> hojas reunidas y encuadernadas. Preparar el soporte, pautar, escribir, decorar y coser exigía trabajo especializado,<sup class="r" data-r="2,3"></sup> por eso los libros eran caros.<sup class="r" data-r="14"></sup></p>
+      <div class="actions">
+        <button class="btn btn-primary" data-deep="deep-s3">Profundizar <span class="arr" aria-hidden="true">→</span></button>
+      </div>
+      <details class="notes"><summary>Notas para el expositor</summary>
+        <p>Pide al público que distinga las tres palabras: manuscrito habla de cómo se escribe, pergamino del material y códice de la forma del libro. Un manuscrito puede estar en papel; un códice puede estar impreso.</p>
+        <p>Avanza por las cinco etapas con el botón «Siguiente». En cada una, pregunta quién crees que hacía ese trabajo: casi nunca era una sola persona.</p>
+      </details>
+    </div>
+    <div>
+      <figure class="figure">
+        <div class="fig-frame" style="background:#1b1712">
+          <svg viewBox="0 0 600 420" role="img" aria-labelledby="codT" id="codexSvg">
+            <title id="codT">Recreación didáctica de las etapas de fabricación de un códice.</title>
+            <rect width="600" height="420" fill="#1b1712"/>
+            <ellipse cx="300" cy="396" rx="220" ry="16" fill="url(#gShadow)"/>
+            <!-- 1 piel -->
+            <g class="stage-g on" data-stage="0">
+              <rect x="150" y="36" width="300" height="348" rx="4" fill="none" stroke="#7a5634" stroke-width="16"/>
+              <path d="M196,80 C240,64 280,74 320,66 C360,60 392,78 404,104 C414,160 400,220 410,280 C414,322 396,346 360,348 C320,352 280,340 240,350 C206,356 188,330 192,296 C196,240 180,170 190,120Z" fill="#ecd9b0"/>
+              <g stroke="#b59b6e" stroke-width="2">
+                <line x1="158" y1="100" x2="192" y2="112"/><line x1="158" y1="180" x2="188" y2="180"/><line x1="158" y1="260" x2="192" y2="262"/><line x1="158" y1="340" x2="196" y2="330"/>
+                <line x1="442" y1="100" x2="402" y2="104"/><line x1="442" y1="180" x2="406" y2="186"/><line x1="442" y1="260" x2="408" y2="262"/><line x1="442" y1="340" x2="398" y2="336"/>
+                <line x1="230" y1="44" x2="234" y2="74"/><line x1="330" y1="44" x2="326" y2="66"/><line x1="250" y1="376" x2="246" y2="350"/><line x1="350" y1="376" x2="350" y2="350"/>
+              </g>
+              <path d="M478,150 A62,62 0 0 1 478,270 A95,95 0 0 0 478,150Z" fill="#cfd6dc" stroke="#8f989f"/>
+              <rect x="530" y="198" width="44" height="24" rx="6" fill="#6b4a2a"/><rect x="512" y="206" width="20" height="8" fill="#8f989f"/>
+            </g>
+            <!-- 2 pautado -->
+            <g class="stage-g" data-stage="1">
+              <rect x="170" y="36" width="260" height="348" fill="url(#gParch)"/>
+              <g fill="#5a4630"><circle cx="184" cy="70" r="2"/><circle cx="184" cy="90" r="2"/><circle cx="184" cy="110" r="2"/><circle cx="184" cy="130" r="2"/><circle cx="184" cy="150" r="2"/><circle cx="184" cy="170" r="2"/><circle cx="184" cy="190" r="2"/><circle cx="184" cy="210" r="2"/><circle cx="184" cy="230" r="2"/><circle cx="184" cy="250" r="2"/><circle cx="184" cy="270" r="2"/><circle cx="184" cy="290" r="2"/><circle cx="184" cy="310" r="2"/><circle cx="184" cy="330" r="2"/><circle cx="184" cy="350" r="2"/>
+                <circle cx="416" cy="70" r="2"/><circle cx="416" cy="90" r="2"/><circle cx="416" cy="110" r="2"/><circle cx="416" cy="130" r="2"/><circle cx="416" cy="150" r="2"/><circle cx="416" cy="170" r="2"/><circle cx="416" cy="190" r="2"/><circle cx="416" cy="210" r="2"/><circle cx="416" cy="230" r="2"/><circle cx="416" cy="250" r="2"/><circle cx="416" cy="270" r="2"/><circle cx="416" cy="290" r="2"/><circle cx="416" cy="310" r="2"/><circle cx="416" cy="330" r="2"/><circle cx="416" cy="350" r="2"/></g>
+              <g stroke="#b9967a" stroke-width="1"><line x1="196" y1="70" x2="404" y2="70"/><line x1="196" y1="90" x2="404" y2="90"/><line x1="196" y1="110" x2="404" y2="110"/><line x1="196" y1="130" x2="404" y2="130"/><line x1="196" y1="150" x2="404" y2="150"/><line x1="196" y1="170" x2="404" y2="170"/><line x1="196" y1="190" x2="404" y2="190"/><line x1="196" y1="210" x2="404" y2="210"/><line x1="196" y1="230" x2="404" y2="230"/><line x1="196" y1="250" x2="404" y2="250"/><line x1="196" y1="270" x2="404" y2="270"/><line x1="196" y1="290" x2="404" y2="290"/><line x1="196" y1="310" x2="404" y2="310"/><line x1="196" y1="330" x2="404" y2="330"/><line x1="196" y1="350" x2="404" y2="350"/><line x1="196" y1="56" x2="196" y2="364"/><line x1="404" y1="56" x2="404" y2="364"/></g>
+              <rect x="440" y="40" width="18" height="340" rx="2" fill="#a07a4a" transform="rotate(4 449 210)"/>
+            </g>
+            <!-- 3 escritura -->
+            <g class="stage-g" data-stage="2">
+              <rect x="170" y="36" width="260" height="348" fill="url(#gParch)"/>
+              <rect x="196" y="62" width="120" height="5" rx="2.5" fill="#9b2a33"/>
+              <g fill="#2c241b"><rect x="196" y="84" width="208" height="4" rx="2"/><rect x="196" y="104" width="202" height="4" rx="2"/><rect x="196" y="124" width="208" height="4" rx="2"/><rect x="196" y="144" width="196" height="4" rx="2"/><rect x="196" y="164" width="208" height="4" rx="2"/><rect x="196" y="184" width="204" height="4" rx="2"/><rect x="196" y="204" width="208" height="4" rx="2"/><rect x="196" y="224" width="200" height="4" rx="2"/><rect x="196" y="244" width="120" height="4" rx="2"/></g>
+              <g stroke="#d9c7a3" stroke-width="1"><line x1="196" y1="266" x2="404" y2="266"/><line x1="196" y1="286" x2="404" y2="286"/><line x1="196" y1="306" x2="404" y2="306"/><line x1="196" y1="326" x2="404" y2="326"/><line x1="196" y1="346" x2="404" y2="346"/></g>
+              <path d="M318,246 C360,190 420,120 476,64 C458,130 400,200 326,252Z" fill="#f4ebd8" stroke="#c9b88f"/>
+              <path d="M312,252 L476,64" stroke="#a8946a" stroke-width="1.6"/>
+            </g>
+            <!-- 4 iluminación -->
+            <g class="stage-g" data-stage="3">
+              <rect x="170" y="36" width="260" height="348" fill="url(#gParch)"/>
+              <rect x="196" y="62" width="70" height="70" rx="3" fill="#27477a" stroke="url(#gGold)" stroke-width="4"/>
+              <text x="231" y="120" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="62" font-weight="700" fill="url(#gGold)">E</text>
+              <g fill="#2c241b"><rect x="276" y="70" width="128" height="4" rx="2"/><rect x="276" y="90" width="124" height="4" rx="2"/><rect x="276" y="110" width="128" height="4" rx="2"/><rect x="196" y="144" width="208" height="4" rx="2"/><rect x="196" y="164" width="200" height="4" rx="2"/><rect x="196" y="184" width="208" height="4" rx="2"/><rect x="196" y="204" width="206" height="4" rx="2"/><rect x="196" y="224" width="208" height="4" rx="2"/><rect x="196" y="244" width="196" height="4" rx="2"/><rect x="196" y="264" width="208" height="4" rx="2"/><rect x="196" y="284" width="204" height="4" rx="2"/><rect x="196" y="304" width="208" height="4" rx="2"/><rect x="196" y="324" width="140" height="4" rx="2"/></g>
+              <path d="M184,70 C172,120 192,170 180,220 S190,310 182,360" fill="none" stroke="#b38a35" stroke-width="2.5"/>
+              <g fill="#5d7a3a"><use href="#leaf" transform="translate(180,130) rotate(-30)"/><use href="#leaf" transform="translate(184,250) rotate(200)"/><use href="#leaf" transform="translate(180,320) rotate(-20)"/></g>
+              <g fill="url(#gGold)"><circle cx="186" cy="190" r="5"/><circle cx="178" cy="290" r="5"/><circle cx="420" cy="364" r="5"/></g>
+              <path d="M200,368 C260,356 330,378 412,364" fill="none" stroke="#b38a35" stroke-width="2.5"/>
+            </g>
+            <!-- 5 encuadernación -->
+            <g class="stage-g" data-stage="4">
+              <rect x="176" y="44" width="28" height="336" rx="6" fill="#4a2716"/>
+              <g stroke="#2e170c" stroke-width="2"><line x1="176" y1="110" x2="204" y2="110"/><line x1="176" y1="180" x2="204" y2="180"/><line x1="176" y1="250" x2="204" y2="250"/><line x1="176" y1="320" x2="204" y2="320"/></g>
+              <rect x="198" y="44" width="236" height="336" rx="8" fill="#6a3a24"/>
+              <rect x="216" y="62" width="200" height="300" rx="2" fill="none" stroke="#4a2716" stroke-width="3"/>
+              <rect x="234" y="80" width="164" height="264" fill="none" stroke="#4a2716" stroke-width="2"/>
+              <g stroke="#4a2716" stroke-width="1.6"><line x1="234" y1="80" x2="398" y2="344"/><line x1="398" y1="80" x2="234" y2="344"/><line x1="316" y1="80" x2="234" y2="212"/><line x1="316" y1="80" x2="398" y2="212"/><line x1="234" y1="212" x2="316" y2="344"/><line x1="398" y1="212" x2="316" y2="344"/></g>
+              <g fill="url(#gGold)"><circle cx="226" cy="72" r="8"/><circle cx="406" cy="72" r="8"/><circle cx="226" cy="352" r="8"/><circle cx="406" cy="352" r="8"/><circle cx="316" cy="212" r="10"/></g>
+              <rect x="420" y="130" width="40" height="14" rx="3" fill="#3a2010"/><rect x="452" y="126" width="14" height="22" rx="2" fill="url(#gGold)"/>
+              <rect x="420" y="282" width="40" height="14" rx="3" fill="#3a2010"/><rect x="452" y="278" width="14" height="22" rx="2" fill="url(#gGold)"/>
+            </g>
+          </svg>
+        </div>
+        <figcaption class="figcap"><span class="tag">Recreación didáctica</span><span id="stageCap">Etapa 1 de 5</span></figcaption>
+      </figure>
+      <div class="stepper" role="group" aria-label="Etapas de fabricación del códice" id="stepper"></div>
+      <div class="panel" id="panelStage" aria-live="polite"></div>
+      <div class="step-nav">
+        <button class="btn btn-ghost" id="stagePrev" aria-label="Etapa anterior">← Anterior</button>
+        <span class="step-count" id="stageCount">1 / 5</span>
+        <button class="btn btn-primary" id="stageNext" aria-label="Etapa siguiente">Siguiente →</button>
+      </div>
+    </div>
+  </div>
+  <div class="deep" id="deep-s3">
+    <p class="kicker">Profundizar · Del soporte al libro</p>
+    <h3>Pergamino, papel y códice</h3>
+    <p><b>Pergamino.</b> Se fabricaba con pieles de ternera, oveja o cabra que se procesaban y luego se cortaban a medida.<sup class="r" data-r="3"></sup> Convertir una piel en pergamino requería semanas de trabajo profesional, y ese material era el mayor costo de un libro.<sup class="r" data-r="14"></sup></p>
+    <p><b>Papel.</b> No todos los manuscritos eran de pergamino. Artesanos del mundo islámico aprendieron de China a fabricar papel y lo elaboraron con lino, un soporte duradero y más económico que el pergamino y el papiro.<sup class="r" data-r="9"></sup> Desde el siglo XIV, talleres italianos adaptaron estas técnicas y sus innovaciones se difundieron por Europa.<sup class="r" data-r="13"></sup></p>
+    <p><b>Códice.</b> Las hojas se doblaban formando cuadernos que se cosían y se protegían con tapas; la encuadernación era la primera defensa del libro y a veces se sustituía por desgaste.<sup class="r" data-r="3"></sup> Un ejemplo conservado en el Getty es la tapa de una Biblia alemana de hacia 1450: tablas de madera cubiertas de piel de becerro.<sup class="r" data-r="2"></sup></p>
+    <p><b>Muchas manos.</b> Pergamineros, copistas, iluminadores y encuadernadores participaban en el proceso; sus nombres rara vez se conservan.<sup class="r" data-r="3"></sup></p>
+  </div>
+</section>
+
+<!-- ===================== 4. ILUMINACIÓN ===================== -->
+<section class="slide t-light" id="s4" data-title="Iluminar" aria-labelledby="h-s4">
+  <div class="wrap split">
+    <div class="text">
+      <p class="kicker">04 · Imagen y página</p>
+      <h2 id="h-s4">El arte de iluminar</h2>
+      <p class="lead">Iluminar era lograr que la página orientara, explicara y deslumbrara.</p>
+      <p class="body">Algunos manuscritos sumaban iniciales decoradas, imágenes y bordes; los más lujosos usaban oro o plata.<sup class="r" data-r="2,3"></sup> La decoración ayudaba a orientarse en el texto y podía expresar devoción o prestigio. Pero <strong>no todos los manuscritos estaban iluminados</strong>, ni todos llevaban oro.</p>
+      <div class="panel" style="border-left-color:var(--accent)">
+        <h4 style="font-size:1.15rem">Ejemplo documentado</h4>
+        <p><i>El libro de la reina</i> (Harley MS 4431). París, c. 1410–1414. British Library. Hecho para la reina Isabel de Baviera bajo la supervisión de Christine de Pizan.<sup class="r" data-r="7"></sup></p>
+      </div>
+      <div class="actions">
+        <button class="btn btn-primary" data-deep="deep-s4">Profundizar <span class="arr" aria-hidden="true">→</span></button>
+      </div>
+      <details class="notes"><summary>Notas para el expositor</summary>
+        <p>Explica la palabra: «iluminar» viene de dar luz a la página. Toca los cuatro puntos y relaciona cada uno con una función: orientar (inicial), explicar (miniatura), enmarcar y comentar (márgenes), impresionar (oro y color).</p>
+        <p>Aclara que el dibujo es una recreación y que el ejemplo real es el manuscrito de Christine de Pizan; si hay proyector con internet, puedes abrir la ficha de la British Library desde las fuentes.</p>
+      </details>
+    </div>
+    <div>
+      <figure class="figure" style="max-width:520px;margin-inline:auto">
+        <div class="fig-frame" id="mapPage" style="background:#efe3c8">
+          <svg viewBox="0 0 520 700" role="img" aria-labelledby="pageT">
+            <title id="pageT">Recreación didáctica de una página iluminada con miniatura, inicial decorada, bordes vegetales y detalles dorados.</title>
+            <rect width="520" height="700" fill="#e8dab8"/>
+            <rect x="20" y="20" width="480" height="660" fill="url(#gParch)"/>
+            <rect x="126" y="64" width="330" height="214" fill="url(#gGold)"/>
+            <rect x="134" y="72" width="314" height="198" fill="url(#pDiaper)"/>
+            <path d="M150,270 L150,150 Q291,70 432,150 L432,270Z" fill="#7b1e2b" opacity=".2"/>
+            <rect x="134" y="256" width="314" height="14" fill="#3d5a2c"/>
+            <path d="M330,258 L344,188 L404,176 L400,192 L356,200 L348,258Z" fill="#6b4a2a"/>
+            <path d="M344,188 L404,176 L402,166 L342,178Z" fill="#f6ecd4"/>
+            <path d="M226,258 C226,204 252,178 278,176 C310,176 326,212 330,258Z" fill="#7b1e2b"/>
+            <circle cx="278" cy="160" r="15" fill="#e9cfaa"/>
+            <path d="M262,156 C262,134 296,134 296,156 L296,168 L262,168Z" fill="#4e121b" opacity=".9"/>
+            <path d="M296,206 Q322,198 344,190" stroke="#7b1e2b" stroke-width="10" stroke-linecap="round" fill="none"/>
+            <path d="M344,190 L368,154" stroke="#fbf6ea" stroke-width="2.4" stroke-linecap="round"/>
+            <rect x="126" y="300" width="92" height="92" fill="#7b1e2b" stroke="url(#gGold)" stroke-width="5"/>
+            <rect x="134" y="308" width="76" height="76" fill="#27477a"/>
+            <text x="172" y="372" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="78" font-weight="700" fill="url(#gGold)">E</text>
+            <g fill="#3a2f24" opacity=".8"><rect x="232" y="306" width="222" height="4" rx="2"/><rect x="232" y="326" width="214" height="4" rx="2"/><rect x="232" y="346" width="222" height="4" rx="2"/><rect x="232" y="366" width="218" height="4" rx="2"/><rect x="232" y="386" width="222" height="4" rx="2"/>
+              <rect x="126" y="430" width="328" height="4" rx="2"/><rect x="126" y="450" width="320" height="4" rx="2"/><rect x="126" y="470" width="328" height="4" rx="2"/><rect x="126" y="490" width="312" height="4" rx="2"/><rect x="126" y="510" width="328" height="4" rx="2"/><rect x="126" y="530" width="324" height="4" rx="2"/><rect x="126" y="550" width="328" height="4" rx="2"/><rect x="126" y="570" width="300" height="4" rx="2"/><rect x="126" y="590" width="328" height="4" rx="2"/><rect x="126" y="610" width="190" height="4" rx="2"/></g>
+            <rect x="126" y="410" width="170" height="5" rx="2.5" fill="#9b2a33"/>
+            <path d="M80,60 C56,140 100,200 72,280 S104,420 70,500 S96,600 78,640" fill="none" stroke="#b38a35" stroke-width="3"/>
+            <path d="M78,640 C160,660 300,626 470,648" fill="none" stroke="#b38a35" stroke-width="3"/>
+            <g fill="#5d7a3a"><use href="#leaf" transform="translate(70,120) rotate(-30) scale(1.4)"/><use href="#leaf" transform="translate(84,210) rotate(200) scale(1.4)"/><use href="#leaf" transform="translate(70,330) rotate(-20) scale(1.4)"/><use href="#leaf" transform="translate(88,450) rotate(190) scale(1.4)"/><use href="#leaf" transform="translate(72,560) rotate(-40) scale(1.4)"/><use href="#leaf" transform="translate(200,646) rotate(-80) scale(1.4)"/><use href="#leaf" transform="translate(380,640) rotate(-100) scale(1.4)"/></g>
+            <g fill="#27477a"><circle cx="92" cy="160" r="6"/><circle cx="62" cy="400" r="6"/><circle cx="300" cy="660" r="6"/></g>
+            <g fill="#9b2a33"><circle cx="58" cy="250" r="6"/><circle cx="96" cy="520" r="6"/><circle cx="430" cy="660" r="6"/></g>
+            <g fill="url(#gGold)" stroke="#8a6420" stroke-width="1"><circle cx="64" cy="90" r="8"/><circle cx="96" cy="300" r="8"/><circle cx="60" cy="470" r="8"/><circle cx="110" cy="652" r="8"/><circle cx="250" cy="640" r="8"/><circle cx="470" cy="648" r="8"/><circle cx="478" cy="80" r="8"/></g>
+          </svg>
+          <button class="hs" style="left:33%;top:49.5%" data-spot="0" aria-pressed="false" aria-label="1. Inicial">1</button>
+          <button class="hs" style="left:58%;top:26%" data-spot="1" aria-pressed="false" aria-label="2. Miniatura">2</button>
+          <button class="hs" style="left:14%;top:62%" data-spot="2" aria-pressed="false" aria-label="3. Márgenes">3</button>
+          <button class="hs" style="left:91.5%;top:11.5%" data-spot="3" aria-pressed="false" aria-label="4. Oro y color">4</button>
+        </div>
+        <figcaption class="figcap"><span class="tag">Recreación didáctica</span><span>No reproduce Harley MS 4431 ni otro manuscrito real.</span></figcaption>
+      </figure>
+      <div class="panel" id="panelPage" aria-live="polite"><h4>Explora la página</h4><p>Toca los cuatro puntos: inicial, miniatura, márgenes y oro y color.</p></div>
+    </div>
+  </div>
+  <div class="deep" id="deep-s4">
+    <p class="kicker">Profundizar · El arte de iluminar</p>
+    <h3>Oro, color y sentido</h3>
+    <p><b>Técnica.</b> Para dorar, el iluminador preparaba una base (gesso), aplicaba pan de oro y lo bruñía para que brillara.<sup class="r" data-r="3"></sup> Los colores se aplicaban como témpera; algunas obras de lujo combinan pan de oro, pintura de oro y pintura de plata, como el libro de oraciones de Carlos el Temerario (Flandes, 1469).<sup class="r" data-r="2"></sup></p>
+    <p><b>Varias tradiciones.</b> La exposición del Getty muestra que la iluminación no fue exclusiva de la Europa cristiana: incluye un códice alemán con san Lucas (poco después de 1053), un Corán del norte de África (siglo IX) y el Pentateuco Rothschild (1296), un manuscrito hebreo.<sup class="r" data-r="2"></sup></p>
+    <p><b>El ejemplo de Christine.</b> En Harley MS 4431 (París, c. 1410–1414) una miniatura muestra a Christine de Pizan entregando el libro a la reina Isabel de Baviera (f. 3r); otra la presenta en su estudio (f. 4r). Lo iluminaron el Maestro de la Cité des Dames y el Maestro del duque de Bedford.<sup class="r" data-r="7"></sup></p>
+    <p class="warn">Muchos manuscritos de estudio o de uso diario tenían poca o ninguna decoración. La iluminación dependía del encargo, del dinero y de la función del libro.</p>
+  </div>
+</section>
+
+<!-- ===================== 5. COPISTA ===================== -->
+<section class="slide t-dark" id="s5" data-title="Copistas" aria-labelledby="h-s5">
+  <div class="wrap split">
+    <div class="text">
+      <p class="kicker">05 · Personas y tareas</p>
+      <h2 id="h-s5">El oficio del copista</h2>
+      <p class="lead">Copiar era conservar, pero también interpretar y, a veces, equivocarse.</p>
+      <p class="body">Copiaban monjes, monjas, clérigos y profesionales laicos que aprendían el oficio durante años.<sup class="r" data-r="4,8,14"></sup> Trabajaban a partir de un modelo y raspaban los errores con el cuchillo.<sup class="r" data-r="4"></sup> <strong>Copista, iluminador y encuadernador</strong> tenían tareas distintas, aunque a veces coincidían. Cada copia difundía una obra… y podía introducir variantes.</p>
+      <div class="actions">
+        <button class="btn btn-primary" data-deep="deep-s5">Profundizar <span class="arr" aria-hidden="true">→</span></button>
+      </div>
+      <details class="notes"><summary>Notas para el expositor</summary>
+        <p>Rompe un mito: no todos los copistas eran monjes. Desde el siglo XIII, en muchas ciudades trabajaban artesanos laicos coordinados por un librero.</p>
+        <p>Haz la actividad con el grupo: lee en voz alta el modelo, luego la copia, y deja que alguien elija la palabra equivocada. Explica que así trabajan hoy los filólogos: comparando copias para reconstruir un texto.</p>
+      </details>
+    </div>
+    <div>
+      <div class="diff" id="diffGame">
+        <div class="lbl" style="margin:0"><span class="tag">Actividad · Ejemplo didáctico</span><span id="diffRound" style="color:var(--muted);letter-spacing:.06em">Ronda 1 de 3</span></div>
+        <div class="card" style="background:#efe3c8;color:#1b1712;border-color:transparent">
+          <div class="lbl" style="color:#83601d"><span>Texto modelo</span><span>inventado para practicar</span></div>
+          <p class="txt" id="diffModel"></p>
+        </div>
+        <div class="card" style="background:#f8f1e0;color:#1b1712;border-color:transparent">
+          <div class="lbl" style="color:#83601d"><span>Copia</span><span>toca la palabra que cambió</span></div>
+          <p class="txt" id="diffCopy"></p>
+        </div>
+        <div class="panel diff-feedback" id="diffFeedback" aria-live="polite"><p>Compara ambas líneas. Hay <b>una</b> diferencia en la copia.</p></div>
+        <div class="actions" style="margin-top:4px">
+          <button class="btn btn-ghost" id="diffNext">Siguiente ejemplo →</button>
+          <span class="hint" id="diffScore" style="margin:0"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="deep" id="deep-s5">
+    <p class="kicker">Profundizar · El oficio del copista</p>
+    <h3>Quién hacía qué</h3>
+    <ul>
+      <li><b>Copista.</b> Reproducía el texto con pluma y tinta negra y roja. El oficio exigía años de aprendizaje observando a un maestro.<sup class="r" data-r="4"></sup> Un copista dejó escrito que su arte era el más duro de todos: «tres dedos escriben, todo el cuerpo sufre».<sup class="r" data-r="3"></sup></li>
+      <li><b>Corrector.</b> Revisaba la copia contra el modelo. Los errores se raspaban con el cuchillo y se escribía encima.<sup class="r" data-r="4"></sup></li>
+      <li><b>Iluminador.</b> Añadía iniciales, miniaturas y oro.<sup class="r" data-r="3"></sup></li>
+      <li><b>Encuadernador.</b> Cosía los cuadernos y colocaba las tapas.<sup class="r" data-r="3"></sup></li>
+    </ul>
+    <p>Estas tareas podían recaer en la misma persona o en talleres distintos. Desde el siglo XIII, un <i>libraire</i> solía coordinar a especialistas en la ciudad.<sup class="r" data-r="14"></sup></p>
+    <p><b>Religiosos y laicos.</b> Las imágenes medievales muestran a obispos y ermitaños escribiendo, y también a mujeres: en el manuscrito de Christine de Pizan aparece un taller supervisado por una mujer.<sup class="r" data-r="4"></sup> El taller de la abadía de Herrad de Landsberg (1175–1200) es otro ejemplo de producción femenina.<sup class="r" data-r="8"></sup></p>
+    <p><b>Copiar es transmitir.</b> Cada copia permitía que un texto sobreviviera y llegara a nuevos lectores, pero también podía añadir omisiones, repeticiones o palabras cambiadas. Por eso los investigadores comparan copias distintas de una misma obra.</p>
+  </div>
+</section>
+
+<!-- ===================== 6. UNIVERSIDADES ===================== -->
+<section class="slide t-light" id="s6" data-title="Universidades" aria-labelledby="h-s6">
+  <div class="wrap">
+    <div class="split" style="align-items:end">
+      <div class="text">
+        <p class="kicker">06 · Comunidades de maestros y estudiantes</p>
+        <h2 id="h-s6">Nacen las universidades</h2>
+        <p class="lead">Maestros y estudiantes se organizaron en comunidades con reglas y privilegios propios.</p>
+      </div>
+      <div>
+        <p class="body">Bolonia, Oxford y París crecieron entre los siglos XI y XIII a partir de escuelas y asociaciones que obtuvieron reconocimiento.<sup class="r" data-r="12,16"></sup> Se empezaba por las <strong>artes liberales</strong> y se podía seguir con <strong>derecho, medicina o teología</strong>, aunque la organización variaba entre universidades.<sup class="r" data-r="12,15"></sup></p>
+        <div class="actions">
+          <button class="btn btn-primary" data-deep="deep-s6">Profundizar <span class="arr" aria-hidden="true">→</span></button>
+        </div>
+      </div>
+    </div>
+    <div class="timeline" id="timeline" role="group" aria-label="Cronología de universidades: selecciona una fecha"></div>
+    <div class="split" style="margin-top:6px;align-items:start">
+      <div class="panel" id="panelTimeline" aria-live="polite"></div>
+      <div>
+        <div class="curric" aria-label="Esquema de estudios">
+          <div class="box"><h4>Artes liberales</h4><p><b>Trivium:</b> gramática, retórica y lógica. <b>Quadrivium:</b> aritmética, geometría, música y astronomía.<sup class="r" data-r="15"></sup></p></div>
+          <div class="arrow" aria-hidden="true">→</div>
+          <div class="box"><h4>Estudios superiores</h4><p>Derecho, medicina y teología. En París: artes, medicina, derecho canónico y teología.<sup class="r" data-r="12"></sup></p></div>
+        </div>
+        <p class="hint">¿«La primera universidad»? Bolonia se presenta como la más antigua del mundo occidental y usa 1088 como fecha convencional.<sup class="r" data-r="5"></sup> La respuesta depende del criterio: enseñanza continua, reconocimiento legal o estatutos.</p>
+        <details class="notes"><summary>Notas para el expositor</summary>
+          <p>Toca 1088 y 1096 y subraya las palabras «convencional» y «evidencia de enseñanza»: ninguna de las dos es un acta de fundación.</p>
+          <p>Después muestra París (1200–1231) para que se vea el proceso: primero hay maestros y estudiantes, luego llegan privilegios, estatutos y reconocimiento. Cierra con el esquema de estudios.</p>
+        </details>
+      </div>
+    </div>
+  </div>
+  <div class="deep" id="deep-s6">
+    <p class="kicker">Profundizar · Universidades</p>
+    <h3>De escuelas a corporaciones</h3>
+    <p><b>Bolonia.</b> Fue durante los siglos XII y XIII el principal centro de estudios de derecho canónico y civil. Los estudiantes de un mismo origen formaron asociaciones para obtener protecciones que no tenían como extranjeros; en 1158 el emperador Federico I concedió privilegios a sus estudiosos.<sup class="r" data-r="16"></sup> La universidad toma 1088 como fecha convencional de fundación.<sup class="r" data-r="5"></sup></p>
+    <p><b>Oxford.</b> No tiene fecha exacta de fundación; hay enseñanza en alguna forma desde 1096. Creció rápido desde 1167, cuando Enrique II prohibió a los estudiantes ingleses ir a París. Tuvo un <i>magister scholarum</i> hacia 1201, canciller en 1214 y los maestros fueron reconocidos como corporación en 1231.<sup class="r" data-r="6"></sup></p>
+    <p><b>París.</b> Surgió en el siglo XII de las escuelas catedralicias. Recibió un diploma real en 1200, confirmación papal en 1215 y la bula <i>Parens scientiarum</i> en 1231. Se organizó en cuatro facultades y los estudiantes en cuatro «naciones». Robert de Sorbon fundó su colegio de teología en 1253, confirmado por el rey en 1257.<sup class="r" data-r="12"></sup></p>
+    <p class="warn">Los planes de estudio, la edad de los estudiantes y la forma de gobierno cambiaban de una universidad a otra.</p>
+  </div>
+</section>
+
+<!-- ===================== 7. ACCESO ===================== -->
+<section class="slide t-dark" id="s7" data-title="¿Quién aprendía?" aria-labelledby="h-s7">
+  <div class="wrap">
+    <div class="split" style="align-items:end">
+      <div class="text">
+        <p class="kicker">07 · Oportunidades y barreras</p>
+        <h2 id="h-s7">¿Quién podía aprender?</h2>
+        <p class="lead">Aprender dependía de quién eras, dónde vivías y cuándo.</p>
+      </div>
+      <div>
+        <p class="body">El género, los recursos, la posición social y la región pesaban mucho. Aun así, hubo mujeres que estudiaron, escribieron y dirigieron la producción de libros.<sup class="r" data-r="7,8"></sup></p>
+        <div class="three">
+          <div><b>Educación formal</b>escuelas y universidades</div>
+          <div><b>Alfabetización</b>leer y, a veces, escribir</div>
+          <div><b>Oficios</b>talleres, hogares, palabra oral</div>
+        </div>
+      </div>
+    </div>
+    <p class="hint" style="margin-top:28px"><span class="tag">Ejemplos contextualizados</span> &nbsp;No son reglas universales: elige un perfil para comparar.</p>
+    <div class="profiles" role="tablist" aria-label="Perfiles educativos" id="profiles"></div>
+    <div class="prof-card" id="profCard" role="tabpanel" aria-live="polite"></div>
+    <div class="actions">
+      <button class="btn btn-primary" data-deep="deep-s7">Profundizar <span class="arr" aria-hidden="true">→</span></button>
+    </div>
+    <details class="notes"><summary>Notas para el expositor</summary>
+      <p>Pregunta al público: «¿saber leer es lo mismo que ir a la escuela?». Usa las tres palabras clave para responder: educación formal, alfabetización y aprendizaje de oficios.</p>
+      <p>Compara dos perfiles opuestos, por ejemplo Christine de Pizan y una familia campesina. Recalca que no damos porcentajes porque no queremos inventar cifras: las fuentes describen casos y contextos.</p>
+    </details>
+  </div>
+  <div class="deep" id="deep-s7">
+    <p class="kicker">Profundizar · Acceso a la educación</p>
+    <h3>Más allá de «solo la nobleza»</h3>
+    <p><b>Conventos.</b> Ofrecieron a muchas mujeres oportunidades de educación, creatividad y comunidad. Hildegarda de Bingen, abadesa benedictina del siglo XII, compuso obras teológicas y musicales; Clara de Asís escribió normas para la vida monástica.<sup class="r" data-r="8"></sup></p>
+    <p><b>Christine de Pizan</b> (Venecia, 1365) creció en París, donde su padre servía en la corte de Carlos V. Estudió lenguas, historia y literatura con la biblioteca real. Viuda a los 24 años, vivió de escribir: dejó decenas de obras y cientos de baladas y poemas.<sup class="r" data-r="7"></sup> La British Library la presenta como la primera autora profesional de Europa.<sup class="r" data-r="8"></sup></p>
+    <p><b>Otras voces.</b> <i>El libro de Margery Kempe</i> es la autobiografía más antigua conocida en inglés, y Estellina Conat es la primera mujer registrada que imprimió un libro con su nombre (1476–1480).<sup class="r" data-r="8"></sup></p>
+    <p><b>Aprender sin escuela.</b> Gran parte del saber práctico —oficios, cultivo, cuidados, oraciones, relatos— se aprendía en casa, en el taller y de forma oral. Los copistas, por ejemplo, se formaban durante años junto a un maestro.<sup class="r" data-r="4"></sup></p>
+    <p class="warn">No existen cifras fiables y generales de alfabetización para toda la Europa medieval; por eso esta presentación no ofrece porcentajes.</p>
+  </div>
+</section>
+
+<!-- ===================== 8. ESCRITORIO ===================== -->
+<section class="slide t-light" id="s8" data-title="Escritorio" aria-labelledby="h-s8">
+  <div class="wrap split rev">
+    <div class="text">
+      <p class="kicker">08 · Instrumentos</p>
+      <h2 id="h-s8">El escritorio medieval</h2>
+      <p class="lead">Cada instrumento resolvía un problema concreto de la escritura.</p>
+      <p class="body">El copista usaba pluma de ave, tintas negra y roja, un cuchillo y pesas para sujetar la hoja.<sup class="r" data-r="4"></sup> Antes, la página se pinchaba y pautaba para alinear el texto.<sup class="r" data-r="3"></sup> El iluminador trabajaba con <strong>otros materiales</strong>: base de gesso, pan de oro y pigmentos.<sup class="r" data-r="3,2"></sup></p>
+      <div class="actions">
+        <button class="btn btn-primary" data-deep="deep-s8">Profundizar <span class="arr" aria-hidden="true">→</span></button>
+      </div>
+      <details class="notes"><summary>Notas para el expositor</summary>
+        <p>Cambia entre «Escribir» e «Iluminar» para mostrar que son dos oficios con herramientas distintas. Detente en el cuchillo: servía para afilar la pluma, raspar errores y sujetar el pergamino.</p>
+        <p>Si quieres conectar con hoy: el cuchillo era la «goma de borrar» del copista.</p>
+      </details>
+    </div>
+    <div>
+      <div class="seg" role="group" aria-label="Tipo de instrumentos" style="margin-bottom:12px">
+        <button aria-pressed="true" data-mode="write">Escribir</button>
+        <button aria-pressed="false" data-mode="illum">Iluminar</button>
+      </div>
+      <figure class="figure">
+        <div class="fig-frame desk mode-write" id="desk">
+          <svg viewBox="0 0 900 520" role="img" aria-labelledby="deskT">
+            <title id="deskT">Recreación didáctica de un escritorio visto desde arriba con pergamino, pluma, cuernos de tinta, cuchillo, pesas, regla y punzón, y materiales para iluminar.</title>
+            <rect width="900" height="520" fill="url(#gWood)"/>
+            <g stroke="#4a301a" stroke-width="1.2" opacity=".35" fill="none"><path d="M0,60 C200,52 500,70 900,58"/><path d="M0,150 C260,160 600,140 900,152"/><path d="M0,250 C300,242 640,262 900,248"/><path d="M0,350 C220,360 560,340 900,356"/><path d="M0,450 C280,444 620,460 900,448"/></g>
+            <!-- pergamino -->
+            <g transform="rotate(-3 450 260)">
+              <rect x="318" y="62" width="290" height="392" fill="url(#gParch)" stroke="#c7b38b"/>
+              <g stroke="#c4a888" stroke-width=".9"><line x1="344" y1="110" x2="584" y2="110"/><line x1="344" y1="130" x2="584" y2="130"/><line x1="344" y1="150" x2="584" y2="150"/><line x1="344" y1="170" x2="584" y2="170"/><line x1="344" y1="190" x2="584" y2="190"/><line x1="344" y1="210" x2="584" y2="210"/><line x1="344" y1="230" x2="584" y2="230"/><line x1="344" y1="250" x2="584" y2="250"/><line x1="344" y1="270" x2="584" y2="270"/><line x1="344" y1="290" x2="584" y2="290"/><line x1="344" y1="310" x2="584" y2="310"/><line x1="344" y1="330" x2="584" y2="330"/><line x1="344" y1="350" x2="584" y2="350"/><line x1="344" y1="370" x2="584" y2="370"/><line x1="344" y1="390" x2="584" y2="390"/><line x1="344" y1="410" x2="584" y2="410"/></g>
+              <rect x="344" y="100" width="130" height="5" rx="2.5" fill="#9b2a33"/>
+              <g fill="#2c241b"><rect x="344" y="122" width="240" height="4" rx="2"/><rect x="344" y="142" width="232" height="4" rx="2"/><rect x="344" y="162" width="240" height="4" rx="2"/><rect x="344" y="182" width="236" height="4" rx="2"/><rect x="344" y="202" width="240" height="4" rx="2"/><rect x="344" y="222" width="150" height="4" rx="2"/></g>
+            </g>
+            <!-- escribir -->
+            <g class="tool-g write">
+              <circle cx="340" cy="78" r="22" fill="#8d8478" stroke="#5f584e" stroke-width="2"/><circle cx="334" cy="72" r="6" fill="#aaa294"/>
+              <circle cx="590" cy="440" r="22" fill="#8d8478" stroke="#5f584e" stroke-width="2"/><circle cx="584" cy="434" r="6" fill="#aaa294"/>
+              <path d="M650,440 C700,370 770,260 838,96 C850,180 780,330 664,452Z" fill="#f4ebd8" stroke="#c9b88f" stroke-width="1.5"/>
+              <path d="M640,470 L838,96" stroke="#a8946a" stroke-width="2"/>
+              <g><path d="M724,58 L772,58 L760,120 L736,120Z" fill="#c9b48d" stroke="#8d7a55" stroke-width="2"/><ellipse cx="748" cy="58" rx="24" ry="8" fill="#14110d"/>
+                 <path d="M786,70 L826,70 L816,124 L796,124Z" fill="#c9b48d" stroke="#8d7a55" stroke-width="2"/><ellipse cx="806" cy="70" rx="20" ry="7" fill="#9b2a33"/></g>
+              <g transform="rotate(-18 700 478)"><rect x="620" y="470" width="90" height="16" rx="6" fill="#4a2716"/><path d="M710,470 L790,474 L780,486 L710,486Z" fill="#c7cdd2" stroke="#7f8890"/></g>
+              <rect x="246" y="70" width="22" height="380" rx="3" fill="#b38a55" stroke="#7a5a32" transform="rotate(3 257 260)"/>
+              <g transform="rotate(-25 190 300)"><rect x="150" y="292" width="54" height="16" rx="7" fill="#6b4a2a"/><path d="M204,296 L250,300 L204,304Z" fill="#9aa3aa"/></g>
+            </g>
+            <!-- iluminar -->
+            <g class="tool-g illum">
+              <rect x="40" y="40" width="110" height="90" rx="4" fill="#efe3c8" stroke="#bfa880"/><rect x="54" y="52" width="82" height="66" fill="url(#gGold)"/>
+              <g><ellipse cx="80" cy="236" rx="34" ry="26" fill="#efe6d6"/><circle cx="80" cy="236" r="16" fill="#27477a"/>
+                 <ellipse cx="160" cy="214" rx="32" ry="24" fill="#efe6d6"/><circle cx="160" cy="214" r="15" fill="#c0392b"/>
+                 <ellipse cx="128" cy="292" rx="32" ry="24" fill="#efe6d6"/><circle cx="128" cy="292" r="15" fill="#3f7a3a"/></g>
+              <g><path d="M60,400 L130,400 L122,470 L68,470Z" fill="#cfc6b4" stroke="#8d846f" stroke-width="2"/><ellipse cx="95" cy="400" rx="35" ry="10" fill="#f6f1e6" stroke="#8d846f" stroke-width="2"/></g>
+              <g transform="rotate(12 220 440)"><rect x="160" y="432" width="110" height="12" rx="6" fill="#7a5634"/><path d="M270,430 C290,428 300,438 296,446 C290,452 276,448 270,446Z" fill="#f2ecdc" stroke="#b9ad93"/></g>
+            </g>
+          </svg>
+          <button class="hs tool write" style="left:83%;top:50%" data-tool="pluma" aria-pressed="false" aria-label="Pluma de ave">1</button>
+          <button class="hs tool write" style="left:86.5%;top:21%" data-tool="tinta" aria-pressed="false" aria-label="Cuernos de tinta negra y roja">2</button>
+          <button class="hs tool write" style="left:78%;top:90%" data-tool="cuchillo" aria-pressed="false" aria-label="Cuchillo">3</button>
+          <button class="hs tool write" style="left:37.8%;top:15%" data-tool="pesas" aria-pressed="false" aria-label="Pesas">4</button>
+          <button class="hs tool write" style="left:28.5%;top:72%" data-tool="regla" aria-pressed="false" aria-label="Regla y punzón para pautar">5</button>
+          <button class="hs tool write" style="left:52%;top:38%" data-tool="pergamino" aria-pressed="false" aria-label="Hoja pautada">6</button>
+          <button class="hs tool illum" style="left:10.5%;top:16%" data-tool="oro" aria-pressed="false" aria-label="Pan de oro">1</button>
+          <button class="hs tool illum" style="left:13.5%;top:47%" data-tool="pigmentos" aria-pressed="false" aria-label="Pigmentos">2</button>
+          <button class="hs tool illum" style="left:10.5%;top:83%" data-tool="gesso" aria-pressed="false" aria-label="Base de gesso">3</button>
+          <button class="hs tool illum" style="left:27%;top:84%" data-tool="brunidor" aria-pressed="false" aria-label="Bruñidor">4</button>
+        </div>
+        <figcaption class="figcap"><span class="tag">Recreación didáctica</span><span>Disposición imaginada; los objetos se basan en las fuentes citadas.</span></figcaption>
+      </figure>
+      <div class="panel" id="panelDesk" aria-live="polite"><h4>Selecciona un instrumento</h4><p>Toca un número para ver su nombre y su función. Cambia a «Iluminar» para ver los materiales del iluminador.</p></div>
+    </div>
+  </div>
+  <div class="deep" id="deep-s8">
+    <p class="kicker">Profundizar · Instrumentos</p>
+    <h3>Escribir no es lo mismo que iluminar</h3>
+    <p><b>Para escribir.</b> La pluma de ave se cortaba y afilaba con el cuchillo, que también servía para raspar errores y sujetar el pergamino. La tinta negra y la roja se guardaban en cuernos, y unas pesas mantenían firme la hoja.<sup class="r" data-r="4"></sup> En muchos talleres se usaba tinta ferrogálica.<sup class="r" data-r="3"></sup></p>
+    <p><b>Para preparar la página.</b> Antes de escribir, el pergamino se pinchaba en los márgenes y se trazaban líneas guía.<sup class="r" data-r="3"></sup></p>
+    <p><b>Para iluminar.</b> Se aplicaba una base de gesso, encima el pan de oro, y luego se bruñía.<sup class="r" data-r="3"></sup> Los colores eran pigmentos aplicados como témpera; en obras de lujo se añadían pintura de oro y de plata.<sup class="r" data-r="2"></sup></p>
+    <p class="warn">Las herramientas cambiaban con el tiempo y la región; este escritorio reúne ejemplos, no un inventario único.</p>
+  </div>
+</section>
+
+<!-- ===================== 9. EL CONOCIMIENTO VIAJA ===================== -->
+<section class="slide t-dark" id="s9" data-title="El saber viaja" aria-labelledby="h-s9">
+  <div class="wrap">
+    <div class="split" style="align-items:end">
+      <div class="text">
+        <p class="kicker">09 · Traducción, copia y enseñanza</p>
+        <h2 id="h-s9">El conocimiento viaja</h2>
+        <p class="lead">No fue una cadena única, sino una red de traducciones, copias y aulas.</p>
+      </div>
+      <div>
+        <p class="body">Estudiosos del mundo islámico tradujeron obras griegas al árabe y produjeron conocimiento nuevo.<sup class="r" data-r="9"></sup> Bizancio conservó y leyó a los clásicos.<sup class="r" data-r="11"></sup> En Toledo, Gerardo de Cremona tradujo al latín el <strong>Canon de medicina</strong> de Avicena,<sup class="r" data-r="10"></sup> una obra que influyó profundamente en Europa.<sup class="r" data-r="9"></sup></p>
+        <div class="actions">
+          <button class="btn btn-primary" data-deep="deep-s9">Profundizar <span class="arr" aria-hidden="true">→</span></button>
+        </div>
+      </div>
+    </div>
+    <div class="chips" role="group" aria-label="Filtrar conexiones por tipo" id="netFilter" style="margin-top:28px">
+      <button class="chip" aria-pressed="true" data-f="all">Todas</button>
+      <button class="chip" aria-pressed="false" data-f="trad">Traducción</button>
+      <button class="chip" aria-pressed="false" data-f="copia">Copia</button>
+      <button class="chip" aria-pressed="false" data-f="ens">Enseñanza</button>
+    </div>
+    <figure class="figure net" style="margin-top:14px">
+      <div class="fig-frame" id="net" style="background:#1a1611">
+        <svg viewBox="0 0 1000 560" role="img" aria-labelledby="netT" id="netSvg">
+          <title id="netT">Esquema conceptual de la circulación del conocimiento entre la herencia antigua, Bizancio, el mundo islámico, los traductores de Toledo, Roma, los monasterios latinos y las universidades.</title>
+          <defs>
+            <marker id="arr-trad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10z" fill="#e0b75c"/></marker>
+            <marker id="arr-copia" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10z" fill="#e8a0ac"/></marker>
+            <marker id="arr-ens" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10z" fill="#9cc7d8"/></marker>
+          </defs>
+          <g opacity=".08" stroke="#f4ecdb"><circle cx="500" cy="280" r="120" fill="none"/><circle cx="500" cy="280" r="220" fill="none"/><circle cx="500" cy="280" r="320" fill="none"/></g>
+          <path class="edge t-trad" id="e1" d="M140,170 Q150,290 230,370" marker-end="url(#arr-trad)"/>
+          <path class="edge t-copia" id="e2" d="M180,120 Q290,70 380,90" marker-end="url(#arr-copia)"/>
+          <path class="edge t-copia" id="e3" d="M190,150 Q440,170 640,130" marker-end="url(#arr-copia)"/>
+          <path class="edge t-trad" id="e4" d="M320,390 Q470,320 580,340" marker-end="url(#arr-trad)"/>
+          <path class="edge t-trad" id="e5" d="M300,420 Q560,520 760,470" marker-end="url(#arr-trad)"/>
+          <path class="edge t-ens" id="e6" d="M700,320 Q820,300 860,290" marker-end="url(#arr-ens)"/>
+          <path class="edge t-ens" id="e7" d="M740,130 Q860,160 890,230" marker-end="url(#arr-ens)"/>
+        </svg>
+        <button class="node" style="left:12%;top:24%" data-node="A" aria-pressed="false">Herencia antigua<small>griega y latina</small></button>
+        <button class="node" style="left:43%;top:15%" data-node="B" aria-pressed="false">Bizancio<small>copia y lectura</small></button>
+        <button class="node" style="left:71%;top:19%" data-node="F" aria-pressed="false">Monasterios y catedrales<small>bibliotecas y escuelas</small></button>
+        <button class="node" style="left:26%;top:72%" data-node="C" aria-pressed="false">Mundo islámico<small>Ibn Sina (Avicena)</small></button>
+        <button class="node" style="left:64%;top:60%" data-node="E" aria-pressed="false">Toledo<small>Gerardo de Cremona</small></button>
+        <button class="node" style="left:83%;top:85%" data-node="H" aria-pressed="false">Roma<small>corte papal</small></button>
+        <button class="node" style="left:89%;top:46%" data-node="G" aria-pressed="false">Escuelas y universidades<small>París, Bolonia…</small></button>
+      </div>
+      <figcaption class="figcap"><span class="tag">Esquema conceptual</span><span>Las flechas indican tipos de transmisión documentados, no rutas geográficas.</span></figcaption>
+    </figure>
+    <div class="legend" aria-hidden="true"><span><i style="background:#e0b75c"></i>Traducción</span><span><i style="background:#e8a0ac"></i>Copia</span><span><i style="background:#9cc7d8"></i>Enseñanza</span></div>
+    <div class="edges-list" id="edgesList" role="group" aria-label="Conexiones"></div>
+    <div class="panel" id="panelNet" aria-live="polite"><h4>Explora la red</h4><p>Toca un lugar o una conexión. Filtra por traducción, copia o enseñanza.</p></div>
+    <details class="notes"><summary>Notas para el expositor</summary>
+      <p>Usa el filtro «Traducción» y sigue el ejemplo del Canon de Avicena: escrito en árabe, traducido al latín en Toledo en el siglo XII y publicado más de 35 veces en los siglos XV y XVI.</p>
+      <p>Recalca que el mundo islámico no fue un simple «puente»: sus médicos crearon conocimiento nuevo a partir de Galeno e Hipócrates. Y recuerda que las flechas son conceptuales, no un mapa de viajes.</p>
+    </details>
+  </div>
+  <div class="deep" id="deep-s9">
+    <p class="kicker">Profundizar · El conocimiento viaja</p>
+    <h3>Traducir también es crear</h3>
+    <p><b>Medicina en el mundo islámico.</b> Fue parte central de la cultura islámica medieval. Sus médicos tradujeron del griego al árabe las obras de Galeno e Hipócrates y, a partir de ellas, produjeron conocimiento nuevo que integraba filosofía, ciencia natural y matemáticas.<sup class="r" data-r="9"></sup></p>
+    <p><b>El Canon de medicina.</b> Ibn Sina (Avicena), sabio persa, escribió una síntesis sistemática de la medicina.<sup class="r" data-r="9,10"></sup> Gerardo de Cremona (c. 1114–c. 1187) aprendió árabe en Toledo y la tradujo al latín.<sup class="r" data-r="10"></sup> En los siglos XV y XVI el Canon se publicó más de treinta y cinco veces.<sup class="r" data-r="9"></sup></p>
+    <p><b>Comunidades en contacto.</b> En Roma, Simón de Génova trabajó con Abraham ben Sem Tob, intérprete de árabe, en la corte del papa Bonifacio VIII para traducir escritos médicos.<sup class="r" data-r="10"></sup> El Pentateuco Rothschild (1296) recuerda que las comunidades judías tuvieron su propia tradición de libros iluminados.<sup class="r" data-r="2"></sup></p>
+    <p><b>Bizancio.</b> Conservó manuscritos de la <i>Ilíada</i>, la <i>Eneida</i> y el tratado médico de Dioscórides,<sup class="r" data-r="17"></sup> y sus intelectuales leyeron intensamente a los clásicos.<sup class="r" data-r="11"></sup></p>
+    <p class="warn">El esquema simplifica: hubo muchas traducciones, idas y vueltas, y saberes que se transmitieron también por la práctica y la enseñanza oral.</p>
+  </div>
+</section>
+
+<!-- ===================== 10. SÍNTESIS Y RETO ===================== -->
+<section class="slide t-light" id="s10" data-title="Síntesis y reto" aria-labelledby="h-s10">
+  <div class="wrap">
+    <p class="kicker">10 · Síntesis</p>
+    <h2 id="h-s10">¿Cómo se conservaba y transmitía el conocimiento?</h2>
+    <p class="lead" style="max-width:40ch">Porque personas concretas lo copiaron, lo enseñaron y lo tradujeron, en lugares muy distintos.</p>
+    <div class="synth">
+      <div><b>Espacios</b><span>Monasterios, catedrales, cortes, ciudades y universidades.</span></div>
+      <div><b>Soportes</b><span>Pergamino, luego también papel, reunidos en códices.</span></div>
+      <div><b>Personas</b><span>Copistas, iluminadores, maestras, maestros y traductores.</span></div>
+      <div><b>Redes</b><span>Europa latina, Bizancio y el mundo islámico en contacto.</span></div>
+    </div>
+    <div class="quiz" id="quiz" aria-live="polite"></div>
+    <details class="notes"><summary>Notas para el expositor</summary>
+      <p>Lee la pregunta central y responde con las cuatro palabras: espacios, soportes, personas y redes. Luego invita al grupo a votar cada respuesta del reto antes de tocarla.</p>
+      <p>Cada respuesta muestra una explicación: léela en voz alta aunque el grupo acierte, porque resume una sección.</p>
+    </details>
+  </div>
+</section>
+
+<!-- ===================== 11. FUENTES ===================== -->
+<section class="slide t-dark" id="s11" data-title="Fuentes" aria-labelledby="h-s11">
+  <div class="wrap">
+    <p class="kicker">11 · Fuentes y créditos</p>
+    <h2 id="h-s11">Fuentes</h2>
+    <p class="lead" style="max-width:44ch">Cada número en la presentación remite a una fuente institucional. Textos parafraseados.</p>
+    <ol class="sources" id="sources"></ol>
+    <div class="credits">
+      <div><h4>Imágenes</h4><p>Todas las ilustraciones son recreaciones didácticas originales hechas en SVG para esta presentación. No reproducen manuscritos reales; los ejemplos históricos se identifican por su institución y se pueden consultar en las fuentes.</p></div>
+      <div><h4>Alcance</h4><p>Europa medieval, siglos V–XV, con sus conexiones con Bizancio y el mundo islámico. Las condiciones variaron según el lugar, la época y el grupo social.</p></div>
+      <div><h4>Uso</h4><p>Modo exposición: ← → o Re Pág / Av Pág para avanzar, Inicio y Fin para saltar, Esc para salir. Las actividades funcionan con teclado y pantalla táctil.</p>
+        <div class="actions"><button class="btn btn-ghost" id="printBtn">Imprimir o guardar PDF</button><button class="btn btn-ghost" id="topBtn">Volver al inicio ↑</button></div></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="present-bar" id="presentBar" role="toolbar" aria-label="Controles del modo exposición">
+  <button id="pPrev" aria-label="Sección anterior">←</button>
+  <span class="count" id="pCount" aria-live="polite">1 / 11</span>
+  <button id="pNext" aria-label="Sección siguiente">→</button>
+  <button id="pExit" aria-label="Salir del modo exposición">Salir</button>
+</div>
+
+<div class="modal-bg" id="modalBg">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" id="modal" tabindex="-1">
+    <button class="close" id="modalClose" aria-label="Cerrar">×</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<script>
+(function(){
+"use strict";
+var $ = function(s,r){return (r||document).querySelector(s);};
+var $$ = function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s));};
+var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ================= FUENTES ================= */
+var SOURCES = [
+ {i:"The Metropolitan Museum of Art (blog Pen and Parchment)", t:"Drawing and the Learned Tradition", d:"s. f.", u:"https://blog.metmuseum.org/penandparchment/drawing-and-the-learned-tradition/", use:"Bibliotecas monásticas y textos de estudio."},
+ {i:"J. Paul Getty Museum", t:"The Making of a Medieval Manuscript (exposición)", d:"4 ago. 2026 – 14 mar. 2027", u:"https://www.getty.edu/exhibitions/making-medieval-manuscript/", use:"Etapas de producción; objetos fechados entre 800 y 1469."},
+ {i:"Corpus Christi College, University of Cambridge", t:"Making medieval manuscripts", d:"Michaelmas (otoño) 2025", u:"https://www.corpus.cam.ac.uk/articles/making-medieval-manuscripts", use:"Pergamino, pautado, escritura, dorado y encuadernación."},
+ {i:"British Library (Sarah J. Biggs)", t:"The Burden of Writing: Scribes in Medieval Manuscripts", d:"2 jun. 2014", u:"https://www.bl.uk/stories/blogs/posts/the-burden-of-writing-scribes-in-medieval-manuscripts", use:"Copistas, aprendizaje e instrumentos."},
+ {i:"Università di Bologna", t:"Our history", d:"s. f.", u:"https://www.unibo.it/en/university/who-we-are/our-history/our-history", use:"1088 como fecha convencional."},
+ {i:"University of Oxford", t:"Our history", d:"s. f.", u:"https://www.ox.ac.uk/about/the-university/history", use:"Enseñanza desde 1096 y desarrollo institucional."},
+ {i:"British Library (Sarah J. Biggs)", t:"Christine de Pizan and the Book of the Queen", d:"26 jun. 2013", u:"https://www.bl.uk/stories/blogs/posts/christine-de-pizan-and-the-book-of-the-queen", use:"Christine de Pizan y Harley MS 4431."},
+ {i:"British Library (nota de prensa)", t:"Last chance to see major exhibition that tells the story of medieval women in their own words (exposición Medieval Women)", d:"10 feb. 2025", u:"https://www.bl.uk/about/press/releases/last-chance-to-see-major-exhibition-that-tells-the-story-of-medieval-women-in-their-own-words", use:"Conventos, mujeres autoras y talleres."},
+ {i:"U.S. National Library of Medicine", t:"Islamic Medical Manuscripts: Medieval Islam", d:"2004, actualizado 13 dic. 2013", u:"https://www.nlm.nih.gov/hmd/arabic/med_islam.html", use:"Medicina islámica, traducciones, Canon y papel."},
+ {i:"U.S. National Library of Medicine", t:"An Odyssey of Knowledge: The Spread of Translation", d:"s. f.", u:"https://www.nlm.nih.gov/exhibition/odysseyofknowledge/spreadoftranslation.html", use:"Gerardo de Cremona, Toledo y Roma."},
+ {i:"The Metropolitan Museum of Art, Heilbrunn Timeline of Art History", t:"Classical Antiquity in the Middle Ages", d:"oct. 2001", u:"https://www.metmuseum.org/essays/classical-antiquity-in-the-middle-ages", use:"Copia de clásicos latinos; Bizancio y Focio."},
+ {i:"Chancellerie des Universités de Paris", t:"The Sorbonne in the Middle Ages", d:"s. f.", u:"https://www.sorbonne.fr/en/the-sorbonne/history-of-the-sorbonne/la-fondation-de-la-sorbonne-au-moyen-age-par-le-theologien-robert-de-sorbon/", use:"Origen de la Universidad de París y sus facultades."},
+ {i:"Library of Congress (Patrick Hastings)", t:"Papermaking: A Rags to Riches Story", d:"5 dic. 2024", u:"https://blogs.loc.gov/bibliomania/2024/12/05/papermaking-a-rags-to-riches-story/", use:"Difusión del papel en Europa desde el siglo XIV."},
+ {i:"J. Paul Getty Museum (S. Waldorf y L. Grollemond)", t:"Why Were Medieval Books So Expensive?", d:"28 mar. 2023", u:"https://www.getty.edu/news/why-are-books-so-expensive/", use:"Costo de los libros y talleres de especialistas."},
+ {i:"Encyclopaedia Britannica", t:"Liberal arts", d:"s. f.", u:"https://www.britannica.com/topic/liberal-arts", use:"Trivium y quadrivium."},
+ {i:"Encyclopaedia Britannica", t:"University of Bologna", d:"s. f.", u:"https://www.britannica.com/topic/University-of-Bologna", use:"Derecho, asociaciones de estudiantes y privilegio de 1158."},
+ {i:"The Metropolitan Museum of Art, Heilbrunn Timeline (Sarah T. Brooks)", t:"Byzantium (ca. 330–1453)", d:"oct. 2001, rev. oct. 2009", u:"https://www.metmuseum.org/essays/byzantium-ca-330-1453", use:"Manuscritos bizantinos de obras clásicas."}
+];
+var srcList = $("#sources");
+SOURCES.forEach(function(s,k){
+  var n=k+1, li=document.createElement("li");
+  li.id="f"+n;
+  li.innerHTML='<span class="n">'+n+'</span><span><b>'+s.i+'.</b> «'+s.t+'». '+s.d+'. <a href="'+s.u+'" target="_blank" rel="noopener">'+s.u.replace(/^https?:\/\//,"")+'</a><br><small>Usada para: '+s.use+'</small></span>';
+  srcList.appendChild(li);
+});
+function renderRefs(root){
+  $$("sup.r[data-r]",root).forEach(function(sup){
+    if(sup.dataset.done) return;
+    sup.dataset.done="1";
+    sup.innerHTML = sup.dataset.r.split(",").map(function(x){x=x.trim();var s=SOURCES[x-1];
+      return '<a href="#f'+x+'" aria-label="Fuente '+x+': '+(s?s.i.replace(/"/g,"")+', '+s.t.replace(/"/g,""):"")+'">['+x+']</a>';}).join("");
+  });
+}
+function R(nums){return '<sup class="r" data-r="'+nums+'"></sup>';}
+
+/* ================= NAVEGACIÓN ================= */
+var slides = $$(".slide");
+var navlist = $("#navlist"), menuList = $("#menuList");
+slides.forEach(function(s,k){
+  var n=(k+1<10?"0":"")+(k+1);
+  var a=document.createElement("li"); a.innerHTML='<a href="#'+s.id+'" data-i="'+k+'">'+(k===0?"Inicio":s.dataset.title)+'</a>'; navlist.appendChild(a);
+  var b=document.createElement("li"); b.innerHTML='<a href="#'+s.id+'" data-i="'+k+'"><span>'+n+'</span>'+s.dataset.title+'</a>'; menuList.appendChild(b);
+});
+var current=0, presenting=false;
+function setActive(i){
+  current=i;
+  $$("a[data-i]").forEach(function(a){ if(+a.dataset.i===i) a.setAttribute("aria-current","true"); else a.removeAttribute("aria-current"); });
+  $("#pCount").textContent=(i+1)+" / "+slides.length;
+  if(presenting) $("#progressBar").style.width=((i)/(slides.length-1)*100)+"%";
+}
+function onScroll(){
+  if(presenting) return;
+  var h=document.documentElement.scrollHeight-window.innerHeight;
+  $("#progressBar").style.width=(h>0?Math.min(100,window.scrollY/h*100):0)+"%";
+  var mid=window.innerHeight*0.45, idx=0;
+  slides.forEach(function(s,k){ if(s.getBoundingClientRect().top<=mid) idx=k; });
+  if(idx!==current) setActive(idx);
+}
+window.addEventListener("scroll",onScroll,{passive:true});
+window.addEventListener("resize",onScroll);
+
+function goTo(i,focus){
+  i=Math.max(0,Math.min(slides.length-1,i));
+  if(presenting){
+    slides.forEach(function(s,k){s.classList.toggle("is-current",k===i);});
+    window.scrollTo(0,0);
+    setActive(i);
+    if(focus!==false){ var h=slides[i].querySelector("h1,h2"); if(h){h.setAttribute("tabindex","-1");h.focus({preventScroll:true});} }
+  } else {
+    slides[i].scrollIntoView({behavior:reduceMotion?"auto":"smooth",block:"start"});
+  }
+}
+function navigateTo(el){
+  var sec=el.closest(".slide"); if(!sec) return;
+  var i=slides.indexOf(sec);
+  if(presenting){ goTo(i,el===sec); if(el!==sec) el.scrollIntoView({block:"center"}); }
+  else { el.scrollIntoView({behavior:reduceMotion?"auto":"smooth",block:el===sec?"start":"center"}); }
+  if(el.matches(".sources li")){ el.classList.add("flash"); setTimeout(function(){el.classList.remove("flash");},1800); var a=el.querySelector("a"); if(a) a.focus({preventScroll:true}); }
+  else if(el===sec){ var h=sec.querySelector("h1,h2"); if(h){h.setAttribute("tabindex","-1"); h.focus({preventScroll:true});} }
+}
+document.addEventListener("click",function(e){
+  var a=e.target.closest('a[href^="#"]'); if(!a) return;
+  var t=document.getElementById(a.getAttribute("href").slice(1)); if(!t) return;
+  e.preventDefault();
+  if(modalOpen) closeModal(false);
+  closeMenu();
+  navigateTo(t);
+});
+
+function setPresent(on,startAt){
+  presenting=on;
+  document.body.classList.toggle("presenting",on);
+  $("#presentBtn").setAttribute("aria-pressed",String(on));
+  if(on){ goTo(typeof startAt==="number"?startAt:current); }
+  else {
+    slides.forEach(function(s){s.classList.remove("is-current");});
+    if(document.fullscreenElement && document.exitFullscreen){document.exitFullscreen().catch(function(){});}
+    slides[current].scrollIntoView({behavior:"auto",block:"start"});
+    onScroll();
+  }
+}
+$("#presentBtn").addEventListener("click",function(){setPresent(!presenting);});
+$("#pPrev").addEventListener("click",function(){goTo(current-1,false);});
+$("#pNext").addEventListener("click",function(){goTo(current+1,false);});
+$("#pExit").addEventListener("click",function(){setPresent(false);});
+$("#startBtn").addEventListener("click",function(){ goTo(1); if(!presenting){ setTimeout(function(){var h=$("#h-s2");h.setAttribute("tabindex","-1");h.focus({preventScroll:true});},reduceMotion?0:600);} });
+$("#startPresent").addEventListener("click",function(){
+  var el=document.documentElement;
+  if(el.requestFullscreen){ el.requestFullscreen().catch(function(){}); }
+  setPresent(true,1);
+});
+$("#topBtn").addEventListener("click",function(){goTo(0);});
+
+/* Menú móvil */
+var menuBtn=$("#menuBtn"), menuPanel=$("#menuPanel");
+function closeMenu(){ if(menuPanel.classList.contains("open")){menuPanel.classList.remove("open");menuBtn.setAttribute("aria-expanded","false");} }
+menuBtn.addEventListener("click",function(){
+  var open=!menuPanel.classList.contains("open");
+  menuPanel.classList.toggle("open",open); menuBtn.setAttribute("aria-expanded",String(open));
+  if(open){ var a=menuPanel.querySelector('[aria-current="true"]')||menuPanel.querySelector("a"); a.focus(); }
+});
+document.addEventListener("click",function(e){ if(!menuPanel.contains(e.target) && e.target!==menuBtn) closeMenu(); });
+
+/* Teclado */
+function isTyping(t){ return t && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName)); }
+document.addEventListener("keydown",function(e){
+  if(e.key==="Escape"){
+    if(modalOpen){ e.preventDefault(); closeModal(true); return; }
+    if(menuPanel.classList.contains("open")){ closeMenu(); menuBtn.focus(); return; }
+    if(presenting){ setPresent(false); return; }
+    return;
+  }
+  if(modalOpen) { if(e.key==="Tab") trapTab(e); return; }
+  if(!presenting || isTyping(e.target) || e.altKey || e.ctrlKey || e.metaKey) return;
+  // No interceptar flechas dentro de grupos con navegación propia
+  if(e.target.closest && e.target.closest('[role="tablist"]') && /Arrow/.test(e.key)) return;
+  var k=e.key;
+  if(k==="ArrowRight"||k==="PageDown"){ e.preventDefault(); goTo(current+1); }
+  else if(k==="ArrowLeft"||k==="PageUp"){ e.preventDefault(); goTo(current-1); }
+  else if(k==="Home"){ e.preventDefault(); goTo(0); }
+  else if(k==="End"){ e.preventDefault(); goTo(slides.length-1); }
+});
+
+/* ================= MODAL ================= */
+var modalBg=$("#modalBg"), modal=$("#modal"), modalBody=$("#modalBody"), modalOpen=false, lastFocus=null;
+function openModal(id,opener){
+  var src=document.getElementById(id); if(!src) return;
+  lastFocus=opener||document.activeElement;
+  modalBody.innerHTML=src.innerHTML;
+  var h=modalBody.querySelector("h3"); if(h) h.id="modalTitle";
+  modalBg.classList.add("open"); modal.classList.remove("modal-in"); void modal.offsetWidth; if(!reduceMotion) modal.classList.add("modal-in");
+  modalOpen=true; document.body.style.overflow="hidden";
+  modal.scrollTop=0; $("#modalClose").focus();
+}
+function closeModal(restore){
+  modalBg.classList.remove("open"); modalOpen=false; document.body.style.overflow="";
+  if(restore!==false && lastFocus && lastFocus.focus) lastFocus.focus();
+}
+function trapTab(e){
+  var f=$$('a[href],button:not([disabled]),[tabindex]:not([tabindex="-1"])',modal);
+  if(!f.length) return;
+  var first=f[0], last=f[f.length-1];
+  if(e.shiftKey && document.activeElement===first){ e.preventDefault(); last.focus(); }
+  else if(!e.shiftKey && document.activeElement===last){ e.preventDefault(); first.focus(); }
+  else if(!modal.contains(document.activeElement)){ e.preventDefault(); first.focus(); }
+}
+$("#modalClose").addEventListener("click",function(){closeModal(true);});
+modalBg.addEventListener("click",function(e){ if(e.target===modalBg) closeModal(true); });
+$$("[data-deep]").forEach(function(b){ b.setAttribute("aria-haspopup","dialog"); b.addEventListener("click",function(){openModal(b.dataset.deep,b);}); });
+
+/* ================= PUNTOS SELECCIONABLES ================= */
+function hotspots(frameSel,panelSel,data){
+  var frame=$(frameSel), panel=$(panelSel);
+  var btns=$$(".hs[data-spot]",frame);
+  btns.forEach(function(b){
+    b.addEventListener("click",function(){
+      btns.forEach(function(x){x.setAttribute("aria-pressed",String(x===b));});
+      var d=data[+b.dataset.spot];
+      panel.innerHTML='<h4>'+b.textContent+'. '+d.t+'</h4>'+d.p.map(function(p){return "<p>"+p+"</p>";}).join("");
+      renderRefs(panel);
+    });
+  });
+}
+hotspots("#mapMonastery","#panelMonastery",[
+ {t:"Biblioteca",p:["Reunía escritos de los Padres de la Iglesia, comentarios bíblicos, historias, enciclopedias, cosmologías y obras de ciencia natural."+R(1),"Buena parte de la literatura latina antigua sobrevivió porque se copió y conservó en bibliotecas monásticas, eclesiásticas y reales."+R(11)]},
+ {t:"Espacio de copia (scriptorium)",p:["«Scriptorium» significa lugar para escribir. Muchos libros de estas bibliotecas se copiaban en el propio monasterio."+R(1),"No todos los monasterios tenían una sala idéntica: lo común era la actividad organizada de copiar, corregir y decorar."]},
+ {t:"Enseñanza",p:["Leer, copiar y enseñar iban juntos. Saint Gall (Suiza), Prüfening (Alemania) y Thorney (Inglaterra) se preciaban de ser centros de saber; sus libros usaban dibujos para explicar ciencia, teología e historia."+R(1)]},
+ {t:"Más allá del claustro",p:["La Universidad de París surgió en el siglo XII de las escuelas catedralicias de la ciudad."+R(12)+" En la corte de Carlos V, Christine de Pizan estudió con la biblioteca real."+R(7),"Desde el siglo XIII, talleres urbanos de especialistas producían libros por encargo."+R(14)]}
+]);
+hotspots("#mapPage","#panelPage",[
+ {t:"Inicial",p:["Una letra grande y decorada marca el comienzo de un texto o de una sección. Ayuda a orientarse al hojear y hace visible la estructura de la obra.","El Getty conserva, por ejemplo, una página de texto decorada del libro de oraciones de Carlos el Temerario (Flandes, 1469)."+R(2)]},
+ {t:"Miniatura",p:["Pequeña pintura dentro de la página: puede mostrar al autor, una escena o una idea del texto, y así apoyar su lectura.","En Harley MS 4431, una miniatura presenta a Christine de Pizan entregando su libro a la reina Isabel de Baviera (f. 3r)."+R(7)]},
+ {t:"Márgenes",p:["Bordes vegetales, figuras y puntos dorados enmarcan el texto y distinguen las páginas importantes.","Los márgenes también dejaban espacio para notas, correcciones y comentarios de los lectores."]},
+ {t:"Oro y color",p:["El oro se aplicaba sobre una base de gesso y se bruñía para que brillara."+R(3)+" Los colores se usaban como témpera; algunas obras añadían pintura de plata."+R(2),"El oro expresaba prestigio o devoción, pero muchos manuscritos no lo llevan."]}
+]);
+
+/* ================= CÓDICE POR ETAPAS ================= */
+var STAGES=[
+ {s:"Piel",t:"Preparar la piel",p:"Pieles de ternera, oveja o cabra se procesaban durante semanas hasta convertirse en pergamino; era el material más caro del libro."+R("3,14")},
+ {s:"Pautar",t:"Cortar, pinchar y pautar",p:"Las hojas se cortaban a medida. Pequeños agujeros en los márgenes guiaban las líneas que ordenaban la escritura."+R(3)},
+ {s:"Escribir",t:"Escribir",p:"El copista trazaba el texto con pluma de ave y tinta (a menudo ferrogálica), con tinta roja para destacar títulos."+R("3,4")},
+ {s:"Iluminar",t:"Decorar e iluminar",p:"Si el encargo lo pedía, un iluminador añadía iniciales, bordes y escenas; el oro se aplicaba sobre gesso y se bruñía."+R(3)},
+ {s:"Coser",t:"Coser y encuadernar",p:"Las hojas dobladas formaban cuadernos que se cosían juntos y se protegían con tapas, por ejemplo de madera forrada de piel."+R("3,2")}
+];
+var stage=0, stepper=$("#stepper");
+STAGES.forEach(function(st,k){
+  var b=document.createElement("button"); b.className="step-dot"; b.innerHTML="<b>"+(k+1)+"</b>"+st.s;
+  b.setAttribute("aria-label","Etapa "+(k+1)+": "+st.t);
+  b.addEventListener("click",function(){setStage(k);}); stepper.appendChild(b);
+});
+function setStage(k){
+  stage=Math.max(0,Math.min(STAGES.length-1,k));
+  $$(".stage-g").forEach(function(g){g.classList.toggle("on",+g.dataset.stage===stage);});
+  $$(".step-dot",stepper).forEach(function(b,i){ if(i===stage) b.setAttribute("aria-current","step"); else b.removeAttribute("aria-current"); });
+  var st=STAGES[stage];
+  $("#panelStage").innerHTML="<h4>"+(stage+1)+". "+st.t+"</h4><p>"+st.p+"</p>"; renderRefs($("#panelStage"));
+  $("#stageCount").textContent=(stage+1)+" / "+STAGES.length;
+  $("#stageCap").textContent="Etapa "+(stage+1)+" de "+STAGES.length+": "+st.t;
+  $("#stagePrev").disabled=stage===0; $("#stageNext").disabled=stage===STAGES.length-1;
+}
+$("#stagePrev").addEventListener("click",function(){setStage(stage-1);});
+$("#stageNext").addEventListener("click",function(){setStage(stage+1);});
+setStage(0);
+
+/* ================= ACTIVIDAD DEL COPISTA ================= */
+var ROUNDS=[
+ {m:"Quien copia con cuidado conserva la palabra de los antiguos maestros.", c:"Quien copia con cuidado conserva la palabra de los antiguos ministros.", w:[10], fix:"maestros", e:"<b>Sustitución.</b> El copista leyó mal una palabra parecida. Un cambio pequeño altera el sentido de la frase."},
+ {m:"El maestro lee el texto en voz alta y los estudiantes escuchan.", c:"El maestro lee el texto texto en voz alta y los estudiantes escuchan.", w:[4,5], fix:"(sobra)", e:"<b>Repetición.</b> La vista volvió a una palabra ya copiada y la escribió dos veces. Los filólogos llaman a este error «ditografía»."},
+ {m:"La pluma se afila con el cuchillo antes de escribir.", c:"La pluma se afila con el cuchilo antes de escribir.", w:[6], fix:"cuchillo", e:"<b>Letra omitida.</b> Falta una «l». Un corrector rasparía la palabra con el cuchillo y la escribiría de nuevo."}
+];
+var round=0, tries=0, firstTry=0, solved=false;
+function renderRound(){
+  var r=ROUNDS[round]; solved=false; tries=0;
+  $("#diffModel").textContent=r.m;
+  var copy=$("#diffCopy"); copy.innerHTML="";
+  r.c.split(" ").forEach(function(word,i){
+    var b=document.createElement("button"); b.className="word"; b.type="button"; b.textContent=word;
+    b.setAttribute("aria-label","Palabra "+(i+1)+": "+word.replace(/[.,]/g,""));
+    b.addEventListener("click",function(){pickWord(b,i);});
+    copy.appendChild(b); copy.appendChild(document.createTextNode(" "));
+  });
+  $("#diffRound").textContent="Ronda "+(round+1)+" de "+ROUNDS.length;
+  $("#diffFeedback").innerHTML="<p>Compara ambas líneas. Hay <b>una</b> diferencia en la copia.</p>";
+  $("#diffNext").textContent= round<ROUNDS.length-1 ? "Siguiente ejemplo →" : "Reiniciar actividad ↺";
+}
+function pickWord(b,i){
+  if(solved) return;
+  var r=ROUNDS[round]; tries++;
+  if(r.w.indexOf(i)>-1){
+    solved=true; if(tries===1) firstTry++;
+    b.classList.add("ok"); var s=document.createElement("span"); s.className="fix"; s.textContent=r.fix; b.after(s);
+    $("#diffFeedback").innerHTML="<p>¡Bien visto! "+r.e+"</p>";
+    $("#diffScore").textContent="Aciertos al primer intento: "+firstTry+" de "+(round+1);
+  } else {
+    b.classList.remove("no"); void b.offsetWidth; b.classList.add("no");
+    $("#diffFeedback").innerHTML="<p>«"+b.textContent.replace(/[.,]/g,"")+"» coincide con el modelo. Sigue comparando palabra por palabra.</p>";
+  }
+}
+$("#diffNext").addEventListener("click",function(){
+  if(round<ROUNDS.length-1){ round++; } else { round=0; firstTry=0; $("#diffScore").textContent=""; }
+  renderRound();
+});
+renderRound();
+
+/* ================= CRONOLOGÍA ================= */
+var TL=[
+ {y:"1088",l:"Bolonia",t:"Bolonia: una fecha convencional",p:"La Universidad de Bolonia toma 1088 como año convencional de fundación de su <i>Studium</i>: es una fecha de referencia, no un acta fundacional."+R(5)+" En los siglos XII y XIII fue el gran centro de derecho canónico y civil."+R(16),src:"5,16"},
+ {y:"1096",l:"Oxford",t:"Oxford: enseñanza documentada",p:"Oxford no tiene fecha exacta de fundación. Hay evidencia de enseñanza, en alguna forma, desde 1096."+R(6)},
+ {y:"1158",l:"Bolonia",t:"Privilegios para los estudiosos",p:"El emperador Federico I concedió privilegios legales a los estudiosos de Bolonia, que se agrupaban en asociaciones según su origen para protegerse."+R(16)},
+ {y:"1167",l:"Oxford",t:"Oxford crece",p:"Oxford creció con rapidez cuando Enrique II prohibió a los estudiantes ingleses asistir a la Universidad de París."+R(6)},
+ {y:"1200",l:"París",t:"París: diploma real",p:"Surgida en el siglo XII de las escuelas catedralicias, la comunidad de maestros y estudiantes de París recibió un diploma real de Felipe Augusto."+R(12)},
+ {y:"1215",l:"París",t:"París: confirmación papal",p:"El papado confirmó la organización de maestros y estudiantes como <i>universitas</i> regida por estatutos comunes."+R(12)},
+ {y:"1231",l:"París y Oxford",t:"Reconocimiento institucional",p:"La bula <i>Parens scientiarum</i> respaldó a la Universidad de París."+R(12)+" Ese mismo año, los maestros de Oxford fueron reconocidos como corporación (<i>universitas</i>)."+R(6)},
+ {y:"1257",l:"París",t:"Colegio de Sorbon",p:"Robert de Sorbon fundó en 1253 un colegio para estudiantes de teología; el rey Luis IX lo confirmó en 1257. De él viene el nombre «Sorbona»."+R(12)}
+];
+var tlWrap=$("#timeline");
+TL.forEach(function(ev,k){
+  var b=document.createElement("button"); b.className="tl-btn"; b.setAttribute("aria-pressed","false");
+  b.innerHTML="<b>"+ev.y+"</b><span>"+ev.l+"</span>";
+  b.addEventListener("click",function(){selectTL(k);}); tlWrap.appendChild(b);
+});
+function selectTL(k){
+  $$(".tl-btn",tlWrap).forEach(function(b,i){b.setAttribute("aria-pressed",String(i===k));});
+  var ev=TL[k]; $("#panelTimeline").innerHTML="<h4>"+ev.y+" · "+ev.t+"</h4><p>"+ev.p+"</p>"; renderRefs($("#panelTimeline"));
+}
+selectTL(0);
+
+/* ================= PERFILES ================= */
+var ICONS={
+ nun:'<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M8 28c0-9 3-16 8-16s8 7 8 16z" fill="currentColor" opacity=".85"/><path d="M9 14c0-6 3-10 7-10s7 4 7 10c-2-3-4-4-7-4s-5 1-7 4z" fill="currentColor"/><circle cx="16" cy="13" r="4" fill="#e9cfaa"/></svg>',
+ pen:'<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 27C10 19 17 10 27 4c-3 10-11 18-19 23z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5 28L27 4" stroke="currentColor" stroke-width="1.5"/></svg>',
+ cap:'<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 9h22v16H5z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 9v16" stroke="currentColor" stroke-width="2"/><path d="M8 13h5M8 17h5M19 13h5M19 17h5" stroke="currentColor" stroke-width="1.5"/></svg>',
+ knife:'<svg viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="18" width="12" height="5" rx="2" fill="currentColor"/><path d="M16 18l12-3-1 8H16z" fill="none" stroke="currentColor" stroke-width="2"/></svg>',
+ wheat:'<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 29V8" stroke="currentColor" stroke-width="2"/><g fill="currentColor"><ellipse cx="12.5" cy="12" rx="2.4" ry="4" transform="rotate(-30 12.5 12)"/><ellipse cx="19.5" cy="12" rx="2.4" ry="4" transform="rotate(30 19.5 12)"/><ellipse cx="12.5" cy="18" rx="2.4" ry="4" transform="rotate(-30 12.5 18)"/><ellipse cx="19.5" cy="18" rx="2.4" ry="4" transform="rotate(30 19.5 18)"/><ellipse cx="16" cy="6" rx="2.2" ry="3.6"/></g></svg>'
+};
+var PROF=[
+ {ic:"nun",n:"Monja en un convento",who:"Ejemplo: Hildegarda de Bingen, abadesa benedictina (siglo XII)",
+  d:"Convento o abadía.",q:"Lectura, liturgia, música y teología; algunas comunidades copiaban y decoraban libros."+R(8),
+  plus:"Los conventos ofrecían educación, creatividad y comunidad. Hildegarda compuso obras teológicas y musicales; el taller de la abadía de Herrad de Landsberg produjo manuscritos (1175–1200)."+R(8),
+  minus:"Entrar y estudiar dependía de la familia, de los recursos y de las reglas de cada comunidad."},
+ {ic:"pen",n:"Escritora en la corte",who:"Christine de Pizan (nacida en Venecia en 1365)",
+  d:"La corte de Carlos V en París y su biblioteca real."+R(7),q:"Lenguas, historia y literatura, estudiadas por su cuenta."+R(7),
+  plus:"Vivió de escribir: decenas de obras y cientos de poemas. Supervisó la copia y decoración de sus manuscritos."+R(7),
+  minus:"Su acceso dependió del puesto de su padre en la corte; al enviudar a los 24 años tuvo que mantener a su familia."+R(7)},
+ {ic:"cap",n:"Estudiante universitario",who:"Bolonia o París, siglos XII–XIII",
+  d:"Comunidades de maestros y estudiantes; en Bolonia, asociaciones según el lugar de origen."+R(16),q:"Artes liberales; después, derecho, medicina o teología."+R(12),
+  plus:"Privilegios legales y una comunidad que protegía a quienes llegaban de lejos."+R(16),
+  minus:"Viajar y vivir lejos de casa exigía recursos o apoyos; no todos podían permitírselo."},
+ {ic:"knife",n:"Aprendiz de copista",who:"Talleres urbanos, sobre todo desde el siglo XIII",
+  d:"El taller, junto a un maestro; en las ciudades, a menudo bajo un librero."+R(14),q:"Preparar la pluma, trazar letras, corregir: años de observación y práctica."+R(4),
+  plus:"Un oficio especializado y valorado, que permitía vivir del trabajo con libros."+R(4),
+  minus:"Aprendizaje largo y trabajo físicamente agotador."+R(3)},
+ {ic:"wheat",n:"Familia campesina",who:"Contexto general · sin una fuente específica en esta presentación",
+  d:"El hogar, el campo, la parroquia y la comunidad.",q:"Saberes prácticos: cultivo, animales, oficios domésticos, oraciones y relatos transmitidos de palabra.",
+  plus:"Conocimientos útiles y complejos, aprendidos por imitación y práctica.",
+  minus:"Poco tiempo y pocos recursos para la educación formal; las posibilidades variaban según la región y la época."}
+];
+var profWrap=$("#profiles"), profBtns=[];
+PROF.forEach(function(p,k){
+  var b=document.createElement("button"); b.className="prof-btn"; b.setAttribute("role","tab"); b.id="ptab"+k;
+  b.setAttribute("aria-controls","profCard"); b.innerHTML=ICONS[p.ic]+"<b>"+p.n+"</b>";
+  b.addEventListener("click",function(){selectProf(k);});
+  b.addEventListener("keydown",function(e){
+    var n=null; if(e.key==="ArrowRight"||e.key==="ArrowDown") n=(k+1)%PROF.length; else if(e.key==="ArrowLeft"||e.key==="ArrowUp") n=(k-1+PROF.length)%PROF.length; else if(e.key==="Home") n=0; else if(e.key==="End") n=PROF.length-1;
+    if(n!==null){ e.preventDefault(); selectProf(n); profBtns[n].focus(); }
+  });
+  profWrap.appendChild(b); profBtns.push(b);
+});
+function selectProf(k){
+  profBtns.forEach(function(b,i){b.setAttribute("aria-selected",String(i===k)); b.tabIndex=i===k?0:-1;});
+  var p=PROF[k], c=$("#profCard"); c.setAttribute("aria-labelledby","ptab"+k);
+  c.innerHTML='<h4>'+p.n+'</h4><p class="who">'+p.who+'</p><div class="prof-grid"><div><h5>Dónde aprendía</h5><p>'+p.d+'</p></div><div><h5>Qué aprendía</h5><p>'+p.q+'</p></div><div class="plus"><h5>Posibilidades</h5><p>'+p.plus+'</p></div><div class="minus"><h5>Barreras</h5><p>'+p.minus+'</p></div></div>';
+  renderRefs(c);
+}
+selectProf(0);
+
+/* ================= ESCRITORIO ================= */
+var TOOLS={
+ pluma:{n:"Pluma de ave",f:"Instrumento principal de escritura. Se cortaba en punta y se volvía a afilar con el cuchillo mientras se trabajaba."+R("4,3")},
+ tinta:{n:"Cuernos de tinta",f:"Recipientes para la tinta negra del texto y la roja de títulos y destacados."+R(4)+" Una tinta frecuente era la ferrogálica."+R(3)},
+ cuchillo:{n:"Cuchillo (cortaplumas)",f:"Tenía tres usos: afilar la pluma, raspar los errores del pergamino y sujetar la hoja mientras se escribía."+R(4)},
+ pesas:{n:"Pesas",f:"Mantenían quieta la hoja de pergamino, que tiende a curvarse."+R(4)},
+ regla:{n:"Regla y punzón",f:"Servían para pinchar los márgenes y trazar las líneas guía antes de escribir."+R(3)},
+ pergamino:{n:"Hoja pautada",f:"El pergamino preparado, con sus líneas guía y un título en rojo. Sobre esta base trabajaban copista e iluminador."+R(3)},
+ oro:{n:"Pan de oro",f:"Láminas finísimas de oro que el iluminador aplicaba sobre la base preparada."+R(3)},
+ pigmentos:{n:"Pigmentos",f:"Colores aplicados como témpera para miniaturas, iniciales y bordes."+R(2)},
+ gesso:{n:"Base de gesso",f:"Capa preparatoria sobre la que se pegaba el oro; le daba relieve."+R(3)},
+ brunidor:{n:"Bruñidor",f:"Se frotaba sobre el oro ya aplicado para hacerlo brillar: el «bruñido» que da luz a la página."+R(3)}
+};
+var desk=$("#desk"), deskBtns=$$(".hs.tool",desk);
+deskBtns.forEach(function(b){
+  b.addEventListener("click",function(){
+    deskBtns.forEach(function(x){x.setAttribute("aria-pressed",String(x===b));});
+    var t=TOOLS[b.dataset.tool], illum=b.classList.contains("illum");
+    $("#panelDesk").innerHTML="<h4>"+t.n+"</h4><p>"+t.f+'</p><p class="src">'+(illum?"Material del iluminador":"Instrumento del copista")+"</p>";
+    renderRefs($("#panelDesk"));
+  });
+});
+$$(".seg button").forEach(function(b){
+  b.addEventListener("click",function(){
+    $$(".seg button").forEach(function(x){x.setAttribute("aria-pressed",String(x===b));});
+    desk.classList.toggle("mode-write",b.dataset.mode==="write"); desk.classList.toggle("mode-illum",b.dataset.mode==="illum");
+    deskBtns.forEach(function(x){x.setAttribute("aria-pressed","false");});
+    $("#panelDesk").innerHTML= b.dataset.mode==="write"
+      ? "<h4>Instrumentos para escribir</h4><p>Toca los números 1 a 6: pluma, tinta, cuchillo, pesas, regla y hoja pautada.</p>"
+      : "<h4>Materiales para iluminar</h4><p>Toca los números 1 a 4: pan de oro, pigmentos, gesso y bruñidor. Son distintos de los instrumentos del copista.</p>";
+  });
+});
+
+/* ================= RED DEL CONOCIMIENTO ================= */
+var NODES={
+ A:{x:120,y:134,t:"Herencia antigua",p:"Obras médicas griegas como las de Galeno e Hipócrates"+R(9)+" y literatura latina como la de Cicerón o Virgilio"+R(11)+" llegaron a la Edad Media gracias a copias y traducciones."},
+ B:{x:430,y:84,t:"Bizancio",p:"Conservó manuscritos de la <i>Ilíada</i>, la <i>Eneida</i> y el tratado médico de Dioscórides."+R(17)+" El patriarca Focio (siglo IX) leyó cientos de obras clásicas."+R(11)},
+ F:{x:710,y:106,t:"Monasterios y catedrales",p:"Copiaban y conservaban textos en sus bibliotecas."+R("1,11")+" De las escuelas catedralicias de París surgió una universidad en el siglo XII."+R(12)},
+ C:{x:260,y:403,t:"Mundo islámico",p:"Sus médicos tradujeron a Galeno e Hipócrates al árabe y produjeron obras nuevas. Ibn Sina (Avicena) escribió el <i>Canon de medicina</i>, una síntesis sistemática."+R(9)},
+ E:{x:640,y:336,t:"Toledo",p:"Gerardo de Cremona (c. 1114–c. 1187) aprendió árabe en Toledo y tradujo al latín obras médicas aún no traducidas, entre ellas el <i>Canon</i>."+R(10)},
+ H:{x:830,y:476,t:"Roma",p:"En la corte del papa Bonifacio VIII, Simón de Génova y Abraham ben Sem Tob, intérprete de árabe, colaboraron para traducir escritos médicos."+R(10)},
+ G:{x:890,y:258,t:"Escuelas y universidades",p:"Organizaron la enseñanza en artes, derecho, medicina y teología."+R(12)+" Allí los textos se leían, se explicaban y se discutían."}
+};
+var EDGES=[
+ {id:"e1",a:"A",b:"C",ty:"trad",l:"Griego → árabe",p:"<b>Traducción.</b> Estudiosos del mundo islámico tradujeron del griego al árabe las obras de Galeno e Hipócrates y, a partir de ellas, crearon conocimiento médico nuevo."+R(9),c:-.18},
+ {id:"e2",a:"A",b:"B",ty:"copia",l:"Clásicos en Bizancio",p:"<b>Copia.</b> En Bizancio se copiaron y leyeron obras clásicas: Homero, Virgilio, Dioscórides."+R("17,11"),c:-.15},
+ {id:"e3",a:"A",b:"F",ty:"copia",l:"Clásicos latinos",p:"<b>Copia.</b> Gran parte de la literatura latina antigua sobrevivió porque se copió en monasterios y se guardó en bibliotecas monásticas, eclesiásticas y reales."+R(11),c:.12},
+ {id:"e4",a:"C",b:"E",ty:"trad",l:"Árabe → latín: el Canon",p:"<b>Traducción.</b> En Toledo, Gerardo de Cremona tradujo al latín el <i>Canon</i> de Ibn Sina y otras obras médicas."+R(10),c:-.15},
+ {id:"e5",a:"C",b:"H",ty:"trad",l:"Traducción en Roma",p:"<b>Traducción.</b> En Roma, Simón de Génova trabajó con Abraham ben Sem Tob para traducir escritos médicos árabes; a menudo transliteraban los términos técnicos."+R(10),c:.2},
+ {id:"e6",a:"E",b:"G",ty:"ens",l:"De la traducción al estudio",p:"<b>Enseñanza.</b> La medicina era una de las facultades de París,"+R(12)+" y las traducciones latinas como el <i>Canon</i> influyeron profundamente en Europa: se publicó más de 35 veces en los siglos XV y XVI."+R(9),c:-.1},
+ {id:"e7",a:"F",b:"G",ty:"ens",l:"De la escuela a la universidad",p:"<b>Enseñanza.</b> La Universidad de París surgió de las escuelas catedralicias de la ciudad."+R(12),c:-.2}
+];
+var netSvg=$("#netSvg"), NS="http://www.w3.org/2000/svg";
+$$(".edge",netSvg).forEach(function(p){p.remove();});
+EDGES.forEach(function(e){
+  var A=NODES[e.a], B=NODES[e.b], dx=B.x-A.x, dy=B.y-A.y, L=Math.sqrt(dx*dx+dy*dy), ux=dx/L, uy=dy/L;
+  var s={x:A.x+ux*62,y:A.y+uy*40}, t={x:B.x-ux*78,y:B.y-uy*46};
+  var mx=(s.x+t.x)/2-uy*L*e.c, my=(s.y+t.y)/2+ux*L*e.c;
+  var p=document.createElementNS(NS,"path");
+  p.setAttribute("d","M"+s.x.toFixed(1)+","+s.y.toFixed(1)+" Q"+mx.toFixed(1)+","+my.toFixed(1)+" "+t.x.toFixed(1)+","+t.y.toFixed(1));
+  p.setAttribute("class","edge t-"+e.ty); p.id=e.id; p.setAttribute("marker-end","url(#arr-"+e.ty+")");
+  netSvg.appendChild(p);
+});
+var TYPES={trad:"Traducción",copia:"Copia",ens:"Enseñanza"};
+var edgesList=$("#edgesList"), edgeBtns=[], nodeBtns=$$(".node",$("#net")), filter="all";
+EDGES.forEach(function(e,k){
+  var b=document.createElement("button"); b.className="chip"; b.setAttribute("aria-pressed","false"); b.dataset.ty=e.ty;
+  b.innerHTML='<span aria-hidden="true" style="display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;background:'+({trad:"#e0b75c",copia:"#e8a0ac",ens:"#9cc7d8"})[e.ty]+'"></span>'+e.l;
+  b.setAttribute("aria-label",TYPES[e.ty]+": "+e.l);
+  b.addEventListener("click",function(){selectEdge(k);});
+  edgesList.appendChild(b); edgeBtns.push(b);
+});
+function highlight(ids){
+  EDGES.forEach(function(e){
+    var p=document.getElementById(e.id), on=ids.indexOf(e.id)>-1, vis=(filter==="all"||e.ty===filter);
+    p.classList.toggle("hl",on); p.classList.toggle("dim",!vis||(ids.length&&!on));
+  });
+}
+function clearSel(){ edgeBtns.forEach(function(b){b.setAttribute("aria-pressed","false");}); nodeBtns.forEach(function(b){b.setAttribute("aria-pressed","false");}); }
+function selectEdge(k){
+  clearSel(); edgeBtns[k].setAttribute("aria-pressed","true");
+  var e=EDGES[k]; highlight([e.id]);
+  $("#panelNet").innerHTML="<h4>"+NODES[e.a].t+" → "+NODES[e.b].t+"</h4><p>"+e.p+"</p>"; renderRefs($("#panelNet"));
+}
+nodeBtns.forEach(function(b){
+  b.addEventListener("click",function(){
+    clearSel(); b.setAttribute("aria-pressed","true");
+    var id=b.dataset.node, n=NODES[id];
+    var rel=EDGES.filter(function(e){return e.a===id||e.b===id;});
+    highlight(rel.map(function(e){return e.id;}));
+    $("#panelNet").innerHTML="<h4>"+n.t+"</h4><p>"+n.p+"</p>"+(rel.length?'<p class="src">Conexiones: '+rel.map(function(e){return TYPES[e.ty].toLowerCase()+" ("+e.l+")";}).join(" · ")+"</p>":"");
+    renderRefs($("#panelNet"));
+  });
+});
+$$("#netFilter .chip").forEach(function(c){
+  c.addEventListener("click",function(){
+    filter=c.dataset.f;
+    $$("#netFilter .chip").forEach(function(x){x.setAttribute("aria-pressed",String(x===c));});
+    edgeBtns.forEach(function(b){ b.hidden = !(filter==="all"||b.dataset.ty===filter); });
+    clearSel(); highlight([]);
+    var txt={all:"Todas las conexiones del esquema.",trad:"Traducción: pasar una obra de una lengua a otra; a menudo con comentarios y términos nuevos.",copia:"Copia: reproducir a mano un texto para conservarlo y difundirlo.",ens:"Enseñanza: leer, explicar y discutir textos con estudiantes."}[filter];
+    $("#panelNet").innerHTML="<h4>"+(filter==="all"?"Todas":TYPES[filter])+"</h4><p>"+txt+"</p>";
+  });
+});
+highlight([]);
+
+/* ================= CUESTIONARIO ================= */
+var QUIZ=[
+ {q:"¿Qué es un códice?",o:["Un libro de hojas reunidas y encuadernadas","Un rollo de papiro","La piel animal preparada para escribir","Cualquier texto escrito a mano"],a:0,
+  e:"El códice es la forma del libro. El pergamino es el material y «manuscrito» indica que se escribió a mano. (Sección 3)"},
+ {q:"¿Qué afirmación sobre los copistas es correcta?",o:["Todos eran monjes","Hubo religiosos y profesionales laicos","Nunca cometían errores","Solo copiaban textos religiosos"],a:1,
+  e:"Copiaban monjes, monjas, clérigos y profesionales laicos; desde el siglo XIII abundaron los talleres urbanos. Y sí, se equivocaban: por eso raspaban y corregían. (Sección 5)"},
+ {q:"¿Qué significa 1088 para la Universidad de Bolonia?",o:["La fecha de su acta de fundación","Su fecha convencional de fundación","El año en que se fundó Oxford","El año en que se tradujo el Canon"],a:1,
+  e:"La propia universidad la presenta como fecha convencional: una referencia, no un documento fundacional. (Sección 6)"},
+ {q:"¿Por qué es importante Christine de Pizan?",o:["Fue la primera rectora de París","Inventó el papel en Europa","Vivió de escribir y supervisó la producción de sus manuscritos","Fue copista en un monasterio inglés"],a:2,
+  e:"Estudió con la biblioteca real, se convirtió en autora profesional y supervisó libros como Harley MS 4431 (c. 1410–1414). (Secciones 4 y 7)"},
+ {q:"¿Qué describe mejor el Canon de medicina de Avicena?",o:["Una copia de Galeno sin aportes propios","Una obra árabe sistemática, traducida al latín en Toledo e influyente en Europa","Un libro de oraciones iluminado","Un manual escrito en latín en Bolonia"],a:1,
+  e:"Ibn Sina sintetizó y amplió la medicina; Gerardo de Cremona lo tradujo al latín y se publicó más de 35 veces en los siglos XV y XVI. (Sección 9)"}
+];
+var qi=0, qscore=0, quiz=$("#quiz");
+function renderQ(){
+  if(qi>=QUIZ.length){
+    quiz.innerHTML='<div class="score"><p class="kicker" style="justify-content:center">Resultado</p><div class="big">'+qscore+'/'+QUIZ.length+'</div><p class="qtext" style="margin:10px 0">'+(qscore===5?"¡Excelente! Dominas el recorrido.":qscore>=3?"¡Muy bien! Repasa las secciones de las preguntas falladas.":"Buen intento: vuelve a las secciones indicadas y repite el reto.")+'</p><button class="btn btn-primary" id="qRestart">Reiniciar reto ↺</button></div>';
+    $("#qRestart").addEventListener("click",function(){qi=0;qscore=0;renderQ();quiz.querySelector(".opt").focus();});
+    $("#qRestart").focus({preventScroll:true});
+    return;
+  }
+  var Q=QUIZ[qi];
+  quiz.innerHTML='<div class="quiz-top"><span class="tag">Reto · Pregunta '+(qi+1)+' de '+QUIZ.length+'</span><div class="qbar" aria-hidden="true"><span style="width:'+(qi/QUIZ.length*100)+'%"></span></div><span class="hint" style="margin:0">Puntuación: '+qscore+'</span></div>'+
+    '<p class="qtext" id="qText">'+Q.q+'</p><div class="opts" role="group" aria-labelledby="qText">'+
+    Q.o.map(function(o,i){return '<button class="opt" data-i="'+i+'"><span class="k" aria-hidden="true">'+"ABCD"[i]+'</span><span>'+o+'</span></button>';}).join("")+
+    '</div><div class="qfeed" id="qFeed"></div><div class="qfoot"><button class="btn btn-primary" id="qNext" hidden>'+(qi<QUIZ.length-1?"Siguiente pregunta →":"Ver resultado →")+'</button></div>';
+  $$(".opt",quiz).forEach(function(b){ b.addEventListener("click",function(){answer(+b.dataset.i);}); });
+  $("#qNext").addEventListener("click",function(){qi++;renderQ(); var f=quiz.querySelector(".opt"); if(f) f.focus({preventScroll:true});});
+}
+function answer(i){
+  var Q=QUIZ[qi], ok=i===Q.a; if(ok) qscore++;
+  $$(".opt",quiz).forEach(function(b,k){ b.disabled=true; if(k===Q.a) b.classList.add("correct"); else if(k===i) b.classList.add("wrong"); });
+  var f=$("#qFeed"); f.innerHTML="<b>"+(ok?"Correcto.":"No exactamente.")+"</b>"+Q.e; f.classList.add("show");
+  var n=$("#qNext"); n.hidden=false; n.focus({preventScroll:true});
+  $(".quiz-top .hint",quiz).textContent="Puntuación: "+qscore;
+}
+renderQ();
+
+/* ================= IMPRESIÓN ================= */
+var notesState=[];
+window.addEventListener("beforeprint",function(){ notesState=$$("details.notes").map(function(d){var o=d.open; d.open=true; return o;}); });
+window.addEventListener("afterprint",function(){ $$("details.notes").forEach(function(d,i){ d.open=!!notesState[i]; }); });
+$("#printBtn").addEventListener("click",function(){ window.print(); });
+
+/* ================= INICIO ================= */
+renderRefs(document);
+setActive(0); onScroll();
+})();
+</script>
+</body>
+</html>
